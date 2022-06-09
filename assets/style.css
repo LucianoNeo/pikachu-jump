@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #333;
+}
+
+main{
+    width: 800px;
+    height: 500px;
+    border: 1px solid #333;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.bg-inicial{
+    width: 100%;
+    z-index: 2;
+}
+
+.pikachu{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
