@@ -48,6 +48,14 @@ h1{
     font-weight: bold;
 }
 
+.musica{
+    width: 100px;
+    position: absolute;
+    top:120px;
+    right: 50px;
+    z-index: 3;
+}
+
 .jumpbtn{
     width: 80px;
     position: absolute;

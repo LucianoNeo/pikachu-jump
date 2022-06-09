@@ -11,7 +11,7 @@ const jumpBtn = document.getElementById('jumpbtn')
 let capturados = 0
 let placar = document.getElementById('placar')
 let iniciar = false
-const music = new Audio('assets/mp3/musica.mp3');
+const music = document.getElementById('musica')
 music.volume =0.03
 const jumpSound = new Audio('assets/mp3/jump.mp3');
 const gameoverSound = new Audio('assets/mp3/gameover.mp3');
@@ -74,8 +74,8 @@ if (pokePosition <= -110 && pokePosition > -112){
 iniciar = true
 }},15)
 
-window.onload = ()=>{
-    music.play()
-}
+// window.onload = ()=>{
+//     music.play()
+// }
 
 document.addEventListener('keydown', jump)
