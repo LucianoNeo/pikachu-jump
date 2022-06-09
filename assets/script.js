@@ -7,6 +7,7 @@ const iniciarbtn = document.getElementById('iniciar')
 const reiniciar = document.getElementById('reiniciar')
 const logo = document.getElementById('logo')
 const mostraPlacar = document.getElementById('mostraPlacar')
+const jumpBtn = document.getElementById('jumpbtn')
 let capturados = 0
 let placar = document.getElementById('placar')
 let iniciar = false
@@ -18,6 +19,7 @@ const gameoverSound = new Audio('assets/mp3/gameover.mp3');
 
 function iniciaJogo(){
     iniciar = true
+    jumpBtn.style.display = 'block'
     iniciarbtn.style.display = 'none'
     pikainicio.style.display = 'none'
     mostraPlacar.style.display = 'block'

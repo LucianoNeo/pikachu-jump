@@ -48,6 +48,19 @@ h1{
     font-weight: bold;
 }
 
+.jumpbtn{
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    z-index: 3;
+    display: none;
+}
+
+.jumpbtn:hover{
+    transform: scale(1.2);
+}
+
 .pokeball{
     position: absolute;
     top:60px;
