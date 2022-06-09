@@ -6,6 +6,12 @@
 }
 body{
     background-color: #333;
+    text-align: center;
+    color: aliceblue;
+}
+
+p{
+    margin-top: 20px;
 }
 
 main{

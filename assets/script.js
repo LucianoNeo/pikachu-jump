@@ -31,14 +31,14 @@ const jump =()=>{
     jumpSound.play()
     setTimeout(()=>{
         pikachu.classList.remove('jump')
-    },1000)
+    },1200)
 }
 
 const loop = setInterval(()=>{
 if (iniciar){
 const pokePosition = pokemon.offsetLeft
 const pikaPosition = window.getComputedStyle(pikachu).bottom.replace('px','')
-if (pokePosition <= 120 && pokePosition > 0 && pikaPosition <50){
+if (pokePosition <= 120 && pokePosition > 0 && pikaPosition < 70){
     music.pause()
     gameoverSound.play()
     bg.style.animation = 'none'
@@ -53,11 +53,19 @@ if (pokePosition <= 120 && pokePosition > 0 && pikaPosition <50){
     reiniciar.style.display='block'
     clearInterval(loop)
 }
-if (pokePosition <= -110 && pokePosition > -115){
+if (pokePosition <= -110 && pokePosition > -112){
     pokemon.src=`assets/img/pokemon/pokemon (${Math.floor(Math.random() * 152)}).gif`
-    capturados = capturados + 1
+    capturados++
     placar.innerText = capturados;
-   
+if(capturados >=10 && capturados < 20){
+    pokemon.style.animation ='animation: pokemon 2.5s infinite linear;'
+}
+if(capturados >=20 && capturados < 40){
+    pokemon.style.animation ='animation: pokemon 2s infinite linear;'
+}
+if(capturados >=40 && capturados < 60){
+    pokemon.style.animation ='animation: pokemon 1.5s infinite linear;'
+}
     
 }
 iniciar = true
