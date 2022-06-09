@@ -10,20 +10,101 @@ body{
 main{
     width: 800px;
     height: 500px;
-    border: 1px solid #333;
+    border: 1px solid white;
     overflow: hidden;
     margin: 0 auto;
     margin-top: 20px;
     position: relative;
+   
 }
 
 .bg-inicial{
-    width: 100%;
-    z-index: 2;
+    position: absolute;
+    height: 110%;
+    animation: rolafundo 8s infinite linear;
+    z-index: 1;
+    top: -5px;
+    //right: -80px;
 }
 
 .pikachu{
     width: 150px;
     position: absolute;
     bottom: 0;
+    z-index: 3;
+    
+}
+
+.jump{
+    animation: jump 1.2s ease-in-out;
+}
+
+.logo{
+    width: 300px;
+    position: absolute;
+    top: 10;
+    z-index: 2;
+}
+
+.pokemon{
+    width: 100px;
+    max-height: 180px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    //left:120px;
+    //right: 800px;
+    animation: pokemon 4s infinite linear;
+}
+
+
+@keyframes rolafundo{
+    from{
+        right:-1800px;
+    }
+
+    to{
+        right:-50px;
+    }
+}
+
+@keyframes pokemon{
+    from{
+        right:-100px;
+    }
+    to{
+        right:800px;
+    }
+}
+
+@keyframes jump{
+    0%{
+        bottom: 0;
+    }
+
+    25%{
+       transform: rotate(-30deg);
+    }
+
+    40%{
+        transform: rotate(-60deg);
+    }
+    50%{
+        bottom: 200px;
+        transform: rotate(-30deg);
+    }
+    75%{
+        bottom: 180px
+        transform: rotate(60deg);
+    }
+
+    90%{
+        transform: rotate(30deg);
+    }
+    
+    
+    100%{
+        bottom:0;
+    }
+
 }
