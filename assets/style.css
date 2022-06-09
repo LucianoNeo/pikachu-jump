@@ -28,6 +28,10 @@ h1{
     color: aliceblue;
 }
 
+.mostraPlacar{
+    display: none;
+}
+
 .placar{
     position: absolute;
     top:50px;
@@ -54,11 +58,20 @@ h1{
     //right: -80px;
 }
 
+
+.pikainicio{
+    width: 300px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 2;
+}
 .pikachu{
     width: 150px;
     position: absolute;
     bottom: 0;
     z-index: 3;
+    display:none;
     
 }
 
@@ -67,9 +80,10 @@ h1{
 }
 
 .logo{
-    width: 300px;
+    width: 600px;
     position: absolute;
     top: 10;
+    right: 60px;
     z-index: 2;
 }
 
@@ -82,6 +96,7 @@ h1{
     //left:120px;
     //right: 800px;
     animation: pokemon 3s infinite linear;
+    display:none;
 }
 
 .gameover{
@@ -97,6 +112,20 @@ h1{
     animation: gameover 1s;
 }
 
+#iniciar{
+    position: absolute;
+    top: 300px;
+    right: 350px;
+    border: none;
+    z-index: 2;
+    border-radius: 15px;
+    color: black;
+    background-color:yellow;
+    padding: 15px;
+    font-weight: bold;
+}
+
+
 #reiniciar{
     position: absolute;
     top: 300px;
@@ -111,7 +140,9 @@ h1{
     display: none;
 }
 
-#reiniciar:hover{
+
+
+#reiniciar,#iniciar:hover{
     background-color: rgb(132, 77, 38);
     color: white;
 }

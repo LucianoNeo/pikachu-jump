@@ -1,13 +1,27 @@
+const pikainicio = document.getElementById('pikainicio')
 const pikachu = document.getElementById('pikachu')
 const pokemon = document.getElementById('pokemon')
 const bg = document.getElementById('bg')
 const gameover = document.getElementById('gameover')
+const iniciarbtn = document.getElementById('iniciar')
 const reiniciar = document.getElementById('reiniciar')
+const logo = document.getElementById('logo')
+const mostraPlacar = document.getElementById('mostraPlacar')
 let capturados = 0
+let placar = document.getElementById('placar')
+let iniciar = false
 const music = new Audio('assets/mp3/musica.mp3');
 
 
-
+function iniciaJogo(){
+    iniciar = true
+    iniciarbtn.style.display = 'none'
+    pikainicio.style.display = 'none'
+    mostraPlacar.style.display = 'block'
+    pikachu.style.display = 'block'
+    pokemon.style.display = 'block'
+    logo.style = 'width:300px;top: 10;left: 10px;'
+}
 
 const jump =()=>{
     pikachu.classList.add('jump')
@@ -18,8 +32,7 @@ const jump =()=>{
 }
 
 const loop = setInterval(()=>{
-
-let placar = document.getElementById('placar')
+if (iniciar){
 const pokePosition = pokemon.offsetLeft
 const pikaPosition = window.getComputedStyle(pikachu).bottom.replace('px','')
 if (pokePosition <= 120 && pokePosition > 0 && pikaPosition <50){
@@ -43,8 +56,8 @@ if (pokePosition == -107){
     placar.innerText = capturados;
     
 }
-
-},15)
+iniciar = true
+}},15)
 
 window.onload = ()=>{
     music.play()
