@@ -58,15 +58,15 @@ if (pokePosition <= -110 && pokePosition > -112){
     pokemon.src=`assets/img/pokemon/pokemon (${Math.floor(Math.random() * 152)}).gif`
     capturados++
     placar.innerText = capturados;
-if(capturados >=10 && capturados < 20){
-    pokemon.style.animation ='animation: pokemon 2.5s infinite linear;'
-}
-if(capturados >=20 && capturados < 40){
-    pokemon.style.animation ='animation: pokemon 2s infinite linear;'
-}
-if(capturados >=40 && capturados < 60){
-    pokemon.style.animation ='animation: pokemon 1.5s infinite linear;'
-}
+// if(capturados >=10 && capturados < 20){
+//     pokemon.style.animation ='animation: pokemon 2.5s infinite linear;'
+// }
+// if(capturados >=20 && capturados < 40){
+//     pokemon.style.animation ='animation: pokemon 2s infinite linear;'
+// }
+// if(capturados >=40 && capturados < 60){
+//     pokemon.style.animation ='animation: pokemon 1.5s infinite linear;'
+// }
     
 }
 iniciar = true
