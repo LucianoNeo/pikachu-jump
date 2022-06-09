@@ -11,6 +11,7 @@ let capturados = 0
 let placar = document.getElementById('placar')
 let iniciar = false
 const music = new Audio('assets/mp3/musica.mp3');
+music.volume =0.5
 const jumpSound = new Audio('assets/mp3/jump.mp3');
 const gameoverSound = new Audio('assets/mp3/gameover.mp3');
 
@@ -38,7 +39,7 @@ if (iniciar){
 const pokePosition = pokemon.offsetLeft
 const pikaPosition = window.getComputedStyle(pikachu).bottom.replace('px','')
 if (pokePosition <= 120 && pokePosition > 0 && pikaPosition <50){
-    //music.stop()
+    music.pause()
     gameoverSound.play()
     bg.style.animation = 'none'
     pokemon.style.animation = 'none'

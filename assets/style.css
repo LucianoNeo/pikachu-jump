@@ -109,7 +109,7 @@ h1{
 }
 
 .gameoveranimation{
-    animation: gameover 1s;
+    animation: gameover 5s;
 }
 
 #iniciar{
