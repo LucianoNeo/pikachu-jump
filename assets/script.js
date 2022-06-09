@@ -53,9 +53,7 @@ if (pokePosition <= 120 && pokePosition > 0 && pikaPosition <50){
     reiniciar.style.display='block'
     clearInterval(loop)
 }
-
-console.log(pokePosition)
-if (pokePosition == -110){
+if (pokePosition <= -110 && pokePosition > -115){
     pokemon.src=`assets/img/pokemon/pokemon (${Math.floor(Math.random() * 152)}).gif`
     capturados = capturados + 1
     placar.innerText = capturados;
