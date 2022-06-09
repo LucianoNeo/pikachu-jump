@@ -42,6 +42,7 @@ if (pokePosition <= 120 && pokePosition > 0 && pikaPosition < 70){
     music.pause()
     gameoverSound.play()
     bg.style.animation = 'none'
+    bg.style.left = '0'
     pokemon.style.animation = 'none'
     pokemon.style.left = `${pokePosition}px`
     pikachu.style.animation = 'none'
