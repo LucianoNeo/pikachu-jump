@@ -16,4 +16,7 @@ Pikachu Jump é o primeiro jogo que desenvolvo utilizando os conhecimentos que v
 - Mostrar a pokédex ao término do jogo, mostrando quais pokémon foram capturados pelo jogador
 - Sistema de rank
 - Compartilhamento de resultados nas redes sociais
-- Port para celulares
+- Port para celulares<br>
+
+JOGUE AQUI => https://lucianoneo.github.io/pikachu-jump/
+
