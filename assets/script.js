@@ -44,7 +44,7 @@ const pokePosition = window.getComputedStyle(pokemon).left.replace('px','')
 const pikaPosition = window.getComputedStyle(pikachu).bottom.replace('px','')
 const pokeCapturado = pokemon.getBoundingClientRect().right.toFixed(0)
 console.log(pokeCapturado)
-if (pokePosition <= 120 && pokePosition > 0 && pikaPosition < 70){
+if (pokePosition <= 125 && pokePosition > 0 && pikaPosition < 70){
     music.pause()
     gameoverSound.play()
     bg.style.animation = 'none'
@@ -61,7 +61,7 @@ if (pokePosition <= 120 && pokePosition > 0 && pikaPosition < 70){
     clearInterval(loop)
 }
 
-if (pokeCapturado <= 140 && pokeCapturado >= 130){
+if (pokeCapturado <= 140 && pokeCapturado >= 135){
     pokemon.src=`assets/img/pokemon/pokemon (${Math.floor(Math.random() * 152)}).gif`
     capturados++
     placar.innerText = capturados;
