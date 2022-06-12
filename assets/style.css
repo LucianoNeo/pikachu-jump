@@ -75,13 +75,25 @@ h1{
     transform: scale(1.2);
 }
 
-.pokeball{
+.pokeballMenu{
     position: absolute;
     top:60px;
     right: 110px;
     z-index: 2;
     width: 50px;
 }
+
+.pokeballCaptura{
+    position: absolute;
+    bottom:0;
+    z-index: 2;
+    width: 100px;
+    animation: pokebola 1s linear ;
+    display: none;
+    transform: rotateY(180deg);
+    
+}
+
 .bg-inicial{
     position: absolute;
     height: 110%;
@@ -121,7 +133,6 @@ h1{
 }
 
 .pokemon{
-    
     height: 120px;
     position: absolute;
     bottom: 0;
@@ -130,6 +141,12 @@ h1{
     //right: 800px;
     animation: pokemon 3s infinite linear;
     display:none;
+}
+
+.pokemonCapturado{
+    z-index: 2;
+    left: 80px;
+    //animation: pokemonCapturado 1s ease-in-out;
 }
 
 .gameover{
@@ -201,14 +218,33 @@ button:hover{
 }
 
 @keyframes pokemon{
-    0%{
-        right:-100px;
+    from{
+    left: 1200px;
     }
-    50%{
-        right: 450px;
+    to{
+    left:-200px;
     }
-    100%{
-        right:900px;
+}
+
+@keyframes pokemonCapturado{
+    from{
+        left: 80;
+        transform: scale(1);
+        
+    }
+    to{
+        left: 80;
+        transform: scale(0.5);
+        
+    }
+}
+
+@keyframes pokebola{
+    from{
+    left: 30px;
+    }
+    to{
+    left:-80px;
     }
 }
 

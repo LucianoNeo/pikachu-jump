@@ -8,14 +8,20 @@ const reiniciar = document.getElementById('reiniciar')
 const logo = document.getElementById('logo')
 const mostraPlacar = document.getElementById('mostraPlacar')
 const jumpBtn = document.getElementById('jumpbtn')
+const pokebola = document.getElementById('pokeballCaptura')
 let capturados = 0
 let placar = document.getElementById('placar')
 let iniciar = false
 const music = document.getElementById('musica')
 music.volume =0.03
 const jumpSound = new Audio('assets/mp3/jump.mp3');
+const capturaSound = new Audio('assets/mp3/captura.mp3');
+capturaSound.playbackRate = 2
+capturaSound.volume =0.05
+jumpSound.volume =0.08
 const gameoverSound = new Audio('assets/mp3/gameover.mp3');
-var capturado = false;
+let capturado = false
+
 
 function iniciaJogo(){
     iniciar = true
@@ -42,21 +48,11 @@ const loop = setInterval(()=>{
 if (iniciar){
 const pokePosition = window.getComputedStyle(pokemon).left.replace('px','')
 const pikaPosition = window.getComputedStyle(pikachu).bottom.replace('px','')
-const pokeCapturado = pokemon.getBoundingClientRect().right.toFixed(0)
-console.log(pokePosition)
-if ( pokePosition <= 50 && !capturado){
-    capturado = true;
-    capturados++
-    placar.innerText = capturados;
-}
-if(capturado && pokePosition < -80){
-    pokemon.src=`assets/img/pokemon/pokemon (${Math.floor(Math.random() * 152)}).gif` 
-}
 
-if(capturado && pokePosition > 700) {
-    capturado = false;
-}
-if (pokePosition <= 125 && pokePosition > 50 && pikaPosition < 70){
+   
+
+
+if (pokePosition <= 125 && pikaPosition < 50 && !capturado){
     music.pause()
     gameoverSound.play()
     bg.style.animation = 'none'
@@ -73,7 +69,31 @@ if (pokePosition <= 125 && pokePosition > 50 && pikaPosition < 70){
     clearInterval(loop)
 }
 
-iniciar = true
-}},1)
+if ( pokePosition < 115 ){
+    pokebola.style.display = 'block'
+    capturaSound.play()
+    void pokebola.offsetWidth;
+    setTimeout(()=>{pokebola.style.display = 'none'},1000)
+        
+ }
+
+if ( pokePosition < 0 ){
+    capturado = true
+    //pokebola.style.display = 'block'
+    //capturaSound.play()
+    pokemon.classList.remove('pokemon')
+     capturados++
+     placar.innerText = capturados;
+     void pokemon.offsetWidth;
+     
+     pokemon.classList.add('pokemon')
+     capturado = false
+     //void pokebola.offsetWidth;
+    setTimeout(()=>{pokebola.style.display = 'none'},1000)
+    pokemon.src=`assets/img/pokemon/pokemon (${Math.floor(Math.random() * 152)}).gif` 
+     
+ }
+
+}},15)
 
 document.addEventListener('keydown', jump)
