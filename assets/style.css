@@ -288,6 +288,7 @@ button:hover{
     top:250px;
     right: 50px;
     z-index: 2;
+    font-size: 18px;
     color: aliceblue;
 }
 
