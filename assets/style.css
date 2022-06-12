@@ -62,19 +62,6 @@ h1{
     z-index: 3;
 }
 
-.jumpbtn{
-    width: 80px;
-    position: absolute;
-    bottom: 0;
-    right: 10px;
-    z-index: 3;
-    display: none;
-}
-
-.jumpbtn:hover{
-    transform: scale(1.2);
-}
-
 .pokeballMenu{
     position: absolute;
     top:60px;
@@ -274,5 +261,114 @@ button:hover{
     100%{
         bottom:0;
     }
+
+}
+
+
+
+@media (max-width: 600px)
+{
+  main{
+    width: 100vw;
+    height: 90vh;
+  }
+
+  
+    .bg-inicial{
+        position: absolute;
+        height: 110%;
+        animation: rolafundo 6s infinite linear;
+        z-index: 1;
+        top: -5px;
+        //right: -80px;
+  }
+
+  h1{
+    position: absolute;
+    top:250px;
+    right: 50px;
+    z-index: 2;
+    color: aliceblue;
+}
+
+.mostraPlacar{
+    display: none;
+}
+
+.placar{
+    position: absolute;
+    top:300px;
+    right: 50px;
+    z-index: 2;
+    color: aliceblue;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.pokeballMenu{
+    position: absolute;
+    top:310px;
+    right: 110px;
+    z-index: 2;
+    width: 50px;
+}
+
+
+.logo{
+    width: 110vw;
+    position: absolute;
+    top: 100px;
+    left: 15px;
+    z-index: 2;
+}
+
+#iniciar{
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top: 400px;
+    left: 110px;
+    border: none;
+    z-index: 2;
+    border-radius: 15px;
+    color: black;
+    background-color:yellow;
+    padding: 15px;
+    font-weight: bold;
+}
+
+
+#reiniciar{
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top: 550px;
+    left: 110px;
+    border: none;
+    z-index: 2;
+    border-radius: 15px;
+    color: black;
+    background-color:yellow;
+    padding: 15px;
+    font-weight: bold;
+    display: none;
+}
+
+.musica{
+    width: 100px;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    z-index: 3;
+}
+
+.gameover{
+    position: absolute;
+    top: 370px;
+    left: 90px;
+    z-index: 2;
+    width: 250px;
+    opacity: 0;
+}
 
 }
