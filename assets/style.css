@@ -325,6 +325,9 @@ button:hover{
   main{
     width: 100vw;
     height: 70vh;
+    display: flex;
+    flex-direction: column;
+    display: none;
   }
 
   
@@ -370,19 +373,19 @@ button:hover{
 
 
 .logo{
-    width: 110vw;
-    position: absolute;
-    top: 100px;
-    left: 15px;
+    position: relative;
+    width: 450px;
     z-index: 2;
+    margin: 0 auto;
+    margin-left: 70px;
 }
 
 #iniciar{
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 60px;
-    top: 350px;
-    left: 80px;
+    top: 278px;
+    left: -4px;
     border: none;
     z-index: 2;
     border-radius: 15px;
@@ -390,15 +393,16 @@ button:hover{
     background-color:yellow;
     padding: 15px;
     font-weight: bold;
+    margin: 0 auto;
 }
 
 
 #reiniciar{
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 60px;
-    top: 450px;
-    left: 80px;
+    top: 278px;
+    left: -4px;
     border: none;
     z-index: 2;
     border-radius: 15px;
@@ -407,6 +411,7 @@ button:hover{
     padding: 15px;
     font-weight: bold;
     display: none;
+    margin: 0 auto;
 }
 
 .musica{

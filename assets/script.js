@@ -31,10 +31,21 @@ const pikaBate = new Audio('assets/mp3/pikachuBate.mp3');
 
 setInterval(()=>{
     carregando.style.display ='none'
-    telaInicial.style.display ='block'
+    telaInicial.style.display ='flex'
 },3000)
 
-
+function iniciaJogo(){
+    iniciar = true
+    capturados = 0
+    gameover.style.display='none'
+    music.play()
+    iniciarbtn.style.display = 'none'
+    pikainicio.style.display = 'none'
+    mostraPlacar.style.display = 'block'
+    pikachu.style.display = 'block'
+    pokemon.style.display = 'block'
+    logo.style = 'position:absolute; width:300px;top: 20px;left: -70px;'
+}
 
 
 const jump =()=>{
@@ -101,18 +112,7 @@ if ( pokePosition < 0 ){
 }},1)
 
 
-function iniciaJogo(){
-    iniciar = true
-    capturados = 0
-    gameover.style.display='none'
-    music.play()
-    iniciarbtn.style.display = 'none'
-    pikainicio.style.display = 'none'
-    mostraPlacar.style.display = 'block'
-    pikachu.style.display = 'block'
-    pokemon.style.display = 'block'
-    logo.style = 'width:300px;top: 20px;left: 10px;'
-}
+
 
 document.addEventListener('keydown', jump)
 document.addEventListener('click', jump)
