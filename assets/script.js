@@ -9,6 +9,8 @@ const logo = document.getElementById('logo')
 const mostraPlacar = document.getElementById('mostraPlacar')
 const jumpBtn = document.getElementById('jumpbtn')
 const pokebola = document.getElementById('pokeballCaptura')
+const carregando = document.getElementById('carregando')
+const telaInicial = document.getElementById('telaInicial')
 let capturados = 0
 let placar = document.getElementById('placar')
 let iniciar = false
@@ -27,17 +29,13 @@ const pikaInicio = new Audio('assets/mp3/pikachuInicio.mp3');
 const pikaFim = new Audio('assets/mp3/pikachuFim.mp3');
 const pikaBate = new Audio('assets/mp3/pikachuBate.mp3');
 
+setInterval(()=>{
+    carregando.style.display ='none'
+    telaInicial.style.display ='block'
+},3000)
 
-function iniciaJogo(){
-    iniciar = true
-    music.play()
-    iniciarbtn.style.display = 'none'
-    pikainicio.style.display = 'none'
-    mostraPlacar.style.display = 'block'
-    pikachu.style.display = 'block'
-    pokemon.style.display = 'block'
-    logo.style = 'width:300px;top: 20px;left: 10px;'
-}
+
+
 
 const jump =()=>{
     pikachu.classList.add('jump')
@@ -101,6 +99,20 @@ if ( pokePosition < 0 ){
  }
 
 }},1)
+
+
+function iniciaJogo(){
+    iniciar = true
+    capturados = 0
+    gameover.style.display='none'
+    music.play()
+    iniciarbtn.style.display = 'none'
+    pikainicio.style.display = 'none'
+    mostraPlacar.style.display = 'block'
+    pikachu.style.display = 'block'
+    pokemon.style.display = 'block'
+    logo.style = 'width:300px;top: 20px;left: 10px;'
+}
 
 document.addEventListener('keydown', jump)
 document.addEventListener('click', jump)
