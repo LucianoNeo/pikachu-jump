@@ -11,6 +11,7 @@ const jumpBtn = document.getElementById('jumpbtn')
 const pokebola = document.getElementById('pokeballCaptura')
 const carregando = document.getElementById('carregando')
 const telaInicial = document.getElementById('telaInicial')
+let carregado = false
 let capturados = 0
 let placar = document.getElementById('placar')
 let iniciar = false
@@ -35,7 +36,6 @@ setInterval(()=>{
 },1000)
 
 function iniciaJogo(){
-    carregado = true
     iniciar = true
     capturados = 0
     gameover.style.display='none'
@@ -46,15 +46,18 @@ function iniciaJogo(){
     pikachu.style.display = 'block'
     pokemon.style.display = 'block'
     logo.style = 'position:absolute; width:300px;top: 20px;left: 10px;'
+    
 }
 
 
 const jump =()=>{
+   if(carregado){
     pikachu.classList.add('jump')
     jumpSound.play()
     setTimeout(()=>{
         pikachu.classList.remove('jump')
     },1000)
+}
 }
 
 const loop = setInterval(()=>{
@@ -63,7 +66,9 @@ if (iniciar){
 const pokePosition = window.getComputedStyle(pokemon).left.replace('px','')
 const pikaPosition = window.getComputedStyle(pikachu).bottom.replace('px','')
 
-   
+if ( pokePosition < 600 ){
+   carregado = true     
+ }   
 
 
 if (pokePosition <= 125 && pikaPosition < 50 && !capturado){
