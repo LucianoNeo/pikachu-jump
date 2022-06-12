@@ -285,7 +285,7 @@ button:hover{
 
   h1{
     position: absolute;
-    top:250px;
+    top:150px;
     right: 50px;
     z-index: 2;
     font-size: 18px;
@@ -298,7 +298,7 @@ button:hover{
 
 .placar{
     position: absolute;
-    top:300px;
+    top:200px;
     right: 50px;
     z-index: 2;
     color: aliceblue;
@@ -308,7 +308,7 @@ button:hover{
 
 .pokeballMenu{
     position: absolute;
-    top:310px;
+    top:210px;
     right: 110px;
     z-index: 2;
     width: 50px;
@@ -327,8 +327,8 @@ button:hover{
     position: absolute;
     width: 200px;
     height: 60px;
-    top: 400px;
-    left: 110px;
+    top: 350px;
+    left: 80px;
     border: none;
     z-index: 2;
     border-radius: 15px;
@@ -343,8 +343,8 @@ button:hover{
     position: absolute;
     width: 200px;
     height: 60px;
-    top: 550px;
-    left: 110px;
+    top: 450px;
+    left: 80px;
     border: none;
     z-index: 2;
     border-radius: 15px;
@@ -365,8 +365,8 @@ button:hover{
 
 .gameover{
     position: absolute;
-    top: 370px;
-    left: 90px;
+    top: 300px;
+    left: 55px;
     z-index: 2;
     width: 250px;
     opacity: 0;

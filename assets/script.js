@@ -36,7 +36,7 @@ function iniciaJogo(){
     mostraPlacar.style.display = 'block'
     pikachu.style.display = 'block'
     pokemon.style.display = 'block'
-    logo.style = 'width:300px;top: 10;left: 10px;'
+    logo.style = 'width:300px;top: 20px;left: 10px;'
 }
 
 const jump =()=>{
