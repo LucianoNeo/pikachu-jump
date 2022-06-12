@@ -32,7 +32,7 @@ const pikaBate = new Audio('assets/mp3/pikachuBate.mp3');
 setInterval(()=>{
     carregando.style.display ='none'
     telaInicial.style.display ='flex'
-},3000)
+},1000)
 
 function iniciaJogo(){
     carregado = true
@@ -95,21 +95,18 @@ if ( pokePosition < 115 ){
 
 if ( pokePosition < 0 ){
     capturado = true
-    //pokebola.style.display = 'block'
-    //capturaSound.play()
     pokemon.classList.remove('pokemon')
      capturados++
      placar.innerText = capturados;
      void pokemon.offsetWidth;
-     
      pokemon.classList.add('pokemon')
      capturado = false
-     //void pokebola.offsetWidth;
     setTimeout(()=>{pokebola.style.display = 'none'},1000)
     pokemon.src=`assets/img/pokemon/pokemon (${Math.floor(Math.random() * 151+1)}).gif` 
      
  }
 
+ 
 }},1)
 
 
