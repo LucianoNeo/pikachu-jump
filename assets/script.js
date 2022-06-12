@@ -35,6 +35,7 @@ setInterval(()=>{
 },3000)
 
 function iniciaJogo(){
+    carregado = true
     iniciar = true
     capturados = 0
     gameover.style.display='none'
@@ -44,7 +45,7 @@ function iniciaJogo(){
     mostraPlacar.style.display = 'block'
     pikachu.style.display = 'block'
     pokemon.style.display = 'block'
-    logo.style = 'position:absolute; width:300px;top: 20px;left: -70px;'
+    logo.style = 'position:absolute; width:300px;top: 20px;left: 10px;'
 }
 
 
@@ -53,7 +54,7 @@ const jump =()=>{
     jumpSound.play()
     setTimeout(()=>{
         pikachu.classList.remove('jump')
-    },1200)
+    },1000)
 }
 
 const loop = setInterval(()=>{

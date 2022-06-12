@@ -134,7 +134,7 @@ h1{
 }
 
 .jump{
-    animation: jump 1.2s ease-in-out;
+    animation: jump 1s ease-in;
 }
 
 .logo{
@@ -280,24 +280,27 @@ button:hover{
     }
 
     25%{
-       transform: rotate(-30deg);
+       transform: rotate(-60deg);
+    }
+    30%{
+        bottom: 200px;
     }
 
+    
     40%{
-        transform: rotate(-60deg);
+        bottom: 150px
+        transform: rotate(-90deg);
     }
-    50%{
-        bottom: 200px;
-        transform: rotate(-30deg);
-    }
+    
     75%{
-        bottom: 200px
-        transform: rotate(60deg);
+        bottom: 100px
+        transform: rotate(0deg);
     }
-    90%{
-        transform: rotate(30deg);
+    80%{
+        transform: rotate(90deg);
     }
     100%{
+        transform: rotate(0deg);
         bottom:0;
     }
 
