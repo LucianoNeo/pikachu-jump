@@ -15,7 +15,7 @@ const music = document.getElementById('musica')
 music.volume =0.03
 const jumpSound = new Audio('assets/mp3/jump.mp3');
 const gameoverSound = new Audio('assets/mp3/gameover.mp3');
-
+var capturado = false;
 
 function iniciaJogo(){
     iniciar = true
@@ -43,8 +43,20 @@ if (iniciar){
 const pokePosition = window.getComputedStyle(pokemon).left.replace('px','')
 const pikaPosition = window.getComputedStyle(pikachu).bottom.replace('px','')
 const pokeCapturado = pokemon.getBoundingClientRect().right.toFixed(0)
-console.log(pokeCapturado)
-if (pokePosition <= 125 && pokePosition > 0 && pikaPosition < 70){
+console.log(pokePosition)
+if ( pokePosition <= 50 && !capturado){
+    capturado = true;
+    capturados++
+    placar.innerText = capturados;
+}
+if(capturado && pokePosition < -80){
+    pokemon.src=`assets/img/pokemon/pokemon (${Math.floor(Math.random() * 152)}).gif` 
+}
+
+if(capturado && pokePosition > 700) {
+    capturado = false;
+}
+if (pokePosition <= 125 && pokePosition > 50 && pikaPosition < 70){
     music.pause()
     gameoverSound.play()
     bg.style.animation = 'none'
@@ -61,18 +73,7 @@ if (pokePosition <= 125 && pokePosition > 0 && pikaPosition < 70){
     clearInterval(loop)
 }
 
-if (pokeCapturado <= 140 && pokeCapturado >= 135){
-    pokemon.src=`assets/img/pokemon/pokemon (${Math.floor(Math.random() * 152)}).gif`
-    capturados++
-    placar.innerText = capturados;
-
-    
-}
 iniciar = true
-}},15)
-
-// window.onload = ()=>{
-//    
-// }
+}},1)
 
 document.addEventListener('keydown', jump)
