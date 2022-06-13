@@ -11,13 +11,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body >
-    <div class="carregando" id="carregando">
+    <section class="carregando" id="carregando">
         <img src="assets/img/pikaCarregando.gif" alt="" class="pikaCarregando">
         <p class="textoCarregando">CARREGANDO</p>
-    </div>    
+    </section>
+   
 <main id="telaInicial">
-    
-    <p class="versao">Versão BETA 0.81</p>
+    <section class="pokedex" id="pokedex">
+        <ul id="pokedexLista">
+          
+        </ul>
+    </section>
+    <p class="versao">Versão BETA 0.85</p>
     <div id="mostraPlacar" class="mostraPlacar">
     <h1>Pokémon Capturados</h1><br>
     <img src="assets/img/pokeball.gif" alt="" srcset="" class="pokeballMenu">
@@ -27,14 +32,17 @@
     <audio autoplay controls class="musica" id="musica"> <source src="assets/mp3/musica.mp3" type='audio/mp3'></audio>
     <img src="assets/img/waving-pikachu.gif" alt="" srcset="" class="pikainicio" id="pikainicio">
     <img src="assets/img/gameover.png" alt="" srcset="" class="gameover" id="gameover">
-    <!-- <img src="assets/img/jump.png" alt="" srcset="" id="jumpbtn" class="jumpbtn" onclick="jump()"> -->
     <button id="iniciar" onclick="iniciaJogo()">INICIAR</button>
     <button id="reiniciar" onclick="(document.location.reload(true))">REINICIAR</button>
+    <button id="pokedexBtn" onclick="mostrarPokedex()">POKEDEX</button>
     <img src="assets/img/logo.png" alt="" srcset="" class="logo" id="logo">
     <img src="assets/img/pikachu.gif" alt="" srcset="" class="pikachu" id="pikachu">
     <img src="assets/img/pokemon/pokemon (1).gif" alt="" srcset="" class="pokemon" id="pokemon">
     <img src="assets/img/bg-inicial-low.png" alt="" srcset="" class="bg-inicial" id="bg">
     <img src="assets/img/bolaCaptura.gif" alt="" srcset="" class="pokeballCaptura" id="pokeballCaptura">
+
+
+    
 </main>
 <p>Desenvolvido por LucianoNeo 2022</p>
 <script src="./assets/script.js"></script>
