@@ -12,7 +12,7 @@ const jumpBtn = document.getElementById('jumpbtn')
 const pokebola = document.getElementById('pokeballCaptura')
 const carregando = document.getElementById('carregando')
 const telaInicial = document.getElementById('telaInicial')
-const estoque = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151]
+
 const pokedex = []
 const mostraPokedex = document.getElementById('pokedex') 
 const pokedexLista = document.getElementById('pokedexLista')
@@ -22,6 +22,11 @@ let capturados = 1
 let placar = document.getElementById('placar')
 let iniciar = false
 let capturado = false
+let arrayPoke = {}
+let descPoke = {}
+const tipos = document.getElementById('tipos')
+const pokedexCapturados = document.getElementById('pokedexCapturados')
+const pokedexCompletada = document.getElementById('pokedexCompletada')
 x = window.screen.width;
 y = window.screen.height;
 
@@ -38,6 +43,36 @@ const gameoverSound = new Audio('assets/mp3/gameover.mp3');
 const pikaInicio = new Audio('assets/mp3/pikachuInicio.mp3');
 const pikaFim = new Audio('assets/mp3/pikachuFim.mp3');
 const pikaBate = new Audio('assets/mp3/pikachuBate.mp3');
+
+// PEGANDO VALORES NA API 
+const fetchPokemon = () => {
+const getPokemonURL = id => `https://pokeapi.co/api/v2/pokemon/${id}`
+const getDescricoes = id => `https://pokeapi.co/api/v2/pokemon-species/${id}`
+const pokemonPromises = []
+const descPromises = []
+for (let i = 1; i <= 151; i++){
+pokemonPromises.push(fetch(getPokemonURL(i)).then(response => response.json()))
+descPromises.push(fetch(getDescricoes(i)).then(response => response.json()))
+}
+
+Promise.all(pokemonPromises)
+.then(pokemons =>{
+    arrayPoke = pokemons
+})
+Promise.all(descPromises)
+.then(descricoes =>{
+    descPoke = descricoes
+    console.log(arrayPoke)
+})
+
+
+}
+
+fetchPokemon()
+
+// FIM DO USO DA API
+
+
 
 setInterval(()=>{
     carregando.style.display ='none'
@@ -58,14 +93,20 @@ function iniciaJogo(){
 }
 
 function carregaPokedex() {
+    let lis = document.querySelectorAll('li');
     for (let index = 1; index <= 151; index++) {
         pokedexLista.innerHTML += `
-        <li><img src="assets/img/interrogacao.png" class="pokedexItem" alt=""></li>`
+        <li id="${index}" onmouseenter="atualizaPokedex('${index}')"><img src="assets/img/interrogacao.png" class="pokedexItem">
+        </li>`
     }
     for (let index = 0; index < pokedex.length; index++) {
         let lis = document.querySelectorAll('li');
-        lis[index].innerHTML = `<img src="assets/img/pokedex/pokemon (${pokedex[index]}).png" class="pokedexItem" alt="">`
+        lis[index].classList.add('capturado')
+        lis[index].innerHTML = `
+        <img src="assets/img/pokedex/pokemon (${pokedex[index]}).png" class="pokedexImg" alt="">`
     }
+    pokedexCapturados.innerText =`Capturados: ${capturados-1}`
+    pokedexCompletada.innerText =`Completada: ${((capturados*100)/151).toFixed(0)}%`
     
 }
 
@@ -74,10 +115,35 @@ function mostrarPokedex() {
     reiniciar.style.top='426px'
     reiniciar.style.right='356px'
     pokedexBtn.style.display='none'
+    mostraPlacar.style.display='none'
+    gameover.style.display='none'
+    logo.style.display='none'
     if(x < 600){
        reiniciar.style.top='500px'
        reiniciar.style.left='119px'
        }
+}
+
+
+function atualizaPokedex(id) {
+    let liPoke = pokedexLista.children[id-1]
+    let idPoke = document.getElementById('idPoke');
+    let facePokemon = document.getElementById('faces');
+    let nomePokedex = document.getElementById('nomePokedex');
+    let nomeSelecionado = arrayPoke[id-1].name
+    let descricaoPoke = descPoke[id-1].flavor_text_entries[0].flavor_text
+    let descricao = document.getElementById('descricao')
+    let conteudoTipos = `<img src="assets/img/tipos/${arrayPoke[id-1].types[0].type.name}.webp">`
+    if(arrayPoke[id-1].types[1]){
+        conteudoTipos += `<img src="assets/img/tipos/${arrayPoke[id-1].types[1].type.name}.webp">`
+    }
+    if(liPoke.classList.contains('capturado')){ 
+    idPoke.innerText = `ID #${id}`
+    facePokemon.src = `assets/img/pokemon/pokemon (${id}).gif`;
+    nomePokedex.innerText = nomeSelecionado.toUpperCase();
+    descricao.innerText = descricaoPoke.replace('\n','')
+    tipos.innerHTML = conteudoTipos
+    }
 }
 
 const jump =()=>{

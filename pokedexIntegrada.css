@@ -5,7 +5,7 @@ span{
 }
 
 .pokedex{
-    display:flex;
+    display:none;
     position: relative;
     flex-direction: column;
     margin: 0 auto;
@@ -162,6 +162,19 @@ border: 2px solid #47484a;
             margin-top: 20px;
         }
 
+        .tipos{
+            width: 125px;
+            height: 30px;
+            position: absolute;
+            top: -9px;
+            left: 217px;
+            margin-top: 20px;
+            z-index: 3;
+            justify-content: space-around;
+            align-items: center;
+            display: flex;
+        }
+
         .pokedexBaixo{
             overflow: auto;
             height: 75%;
@@ -205,7 +218,16 @@ border: 2px solid #47484a;
             justify-content: center;
             align-items: center;
         }
-
+        .pokedexImg{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 50px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+        }
         footer{
             display: flex;
             width: 100%;
@@ -220,3 +242,9 @@ border: 2px solid #47484a;
             height: 30px;
             align-self: center;
         }
+
+        .capturado{
+
+        }
+
+      
