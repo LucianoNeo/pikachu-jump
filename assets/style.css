@@ -226,8 +226,8 @@ button:hover{
     color: white;
 }
 
-.pokedex{
-    overflow: auto;
+/* .containerPokedex{
+    
     background-color: rgb(226, 19, 19);
     margin: 0 auto;
     width: 800px;
@@ -241,51 +241,7 @@ button:hover{
     border-radius: 10px;
     display: none;
     
-}
-
-.pokedex ul{
-    display: flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    width: 80%;
-    z-index: 3;
-    padding: 10px;
-    margin: 0 auto;
-    justify-content: space-between;
-}
-
-.pokedex li{
-    margin-right: 5px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
-    background-color: aliceblue;
-    padding: 20px;
-    border-radius: 10px;
-    width: 140px;
-    height: 140px;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.pokedexItem{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-}
-
-.pokedexTexto{
-float: center;
-color: black;
-font-size: 12px;
-font-weight: bold;
-}
+} */
 
 
 @keyframes piscando{

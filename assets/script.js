@@ -59,11 +59,12 @@ function iniciaJogo(){
 
 function carregaPokedex() {
     for (let index = 1; index <= 151; index++) {
-        pokedexLista.innerHTML += `<li><span class="pokedexTexto">ID#${index}</span><img src="assets/img/interrogacao.png" class="pokedexItem" alt=""></li>`
+        pokedexLista.innerHTML += `
+        <li><img src="assets/img/interrogacao.png" class="pokedexItem" alt=""></li>`
     }
     for (let index = 0; index < pokedex.length; index++) {
         let lis = document.querySelectorAll('li');
-        lis[index].innerHTML = `<span class="pokedexTexto">ID#${index+1}</span><img src="assets/img/pokedex/pokemon (${pokedex[index]}).png" class="pokedexItem" alt="">`
+        lis[index].innerHTML = `<img src="assets/img/pokedex/pokemon (${pokedex[index]}).png" class="pokedexItem" alt="">`
     }
     
 }
