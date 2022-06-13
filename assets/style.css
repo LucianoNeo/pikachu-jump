@@ -402,7 +402,7 @@ font-weight: bold;
   main{
     top:-25px;
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     display: none;
@@ -476,20 +476,20 @@ font-weight: bold;
 
 
 #reiniciar{
-    position: relative;
-    width: 200px;
-    height: 60px;
-    top: 278px;
-    left: -4px;
-    border: none;
-    z-index: 2;
-    border-radius: 15px;
-    color: black;
-    background-color:yellow;
-    padding: 15px;
-    font-weight: bold;
-    display: none;
-    margin: 0 auto;
+position: absolute;
+width: 145px;
+height: 60px;
+top: 450px;
+left: 25px;
+border: none;
+z-index: 3;
+border-radius: 15px;
+color: black;
+background-color: yellow;
+padding: 15px;
+font-weight: bold;
+display: none;
+margin: 0 auto;
 }
 
 .musica{
@@ -519,6 +519,43 @@ font-weight: bold;
     //left:1200px;
     animation: pokemon 4s infinite linear;
     display:none;
+}
+
+.pokedex{
+    overflow: auto;
+    background-color: rgb(226, 19, 19);
+    margin: 0 auto;
+    width: 95vw;
+    height: 50vh;
+    margin-top: 20px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    border: 10px solid rgb(226, 216, 208);
+    z-index: 5;
+    border-radius: 10px;
+    display: none;
+    
+}
+
+#pokedexBtn{
+    position: absolute;
+    width: 145px;
+    height: 60px;
+    top: 450px;
+    right: 39px;
+    border: none;
+    z-index: 2;
+    border-radius: 15px;
+    color: black;
+    background-color:yellow;
+    padding: 15px;
+    font-weight: bold;
+    display: none;
+}
+
+.pokedex ul{
+    width: 90%;
 }
 
 }

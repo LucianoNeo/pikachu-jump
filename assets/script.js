@@ -22,6 +22,9 @@ let capturados = 1
 let placar = document.getElementById('placar')
 let iniciar = false
 let capturado = false
+x = window.screen.width;
+y = window.screen.height;
+
 
 // SONS
 const music = document.getElementById('musica')
@@ -69,6 +72,11 @@ function mostrarPokedex() {
     mostraPokedex.style.display='flex'
     reiniciar.style.top='426px'
     reiniciar.style.right='356px'
+    pokedexBtn.style.display='none'
+    if(x < 600){
+       reiniciar.style.top='500px'
+       reiniciar.style.left='119px'
+       }
 }
 
 const jump =()=>{
