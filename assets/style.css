@@ -194,7 +194,21 @@ h1{
 #reiniciar{
     position: absolute;
     top: 300px;
-    right: 350px;
+    right: 452px;
+    border: none;
+    z-index: 2;
+    border-radius: 15px;
+    color: black;
+    background-color:yellow;
+    padding: 15px;
+    font-weight: bold;
+    display: none;
+}
+
+#pokedexBtn{
+    position: absolute;
+    top: 300px;
+    right: 255px;
     border: none;
     z-index: 2;
     border-radius: 15px;
@@ -210,6 +224,67 @@ h1{
 button:hover{
     background-color: rgb(132, 77, 38);
     color: white;
+}
+
+.pokedex{
+    overflow: auto;
+    background-color: rgb(226, 19, 19);
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    border: 10px solid rgb(226, 216, 208);
+    z-index: 5;
+    border-radius: 10px;
+    display: none;
+    
+}
+
+.pokedex ul{
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    width: 80%;
+    z-index: 3;
+    padding: 10px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.pokedex li{
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    width: 140px;
+    height: 140px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pokedexItem{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokedexTexto{
+float: center;
+color: black;
+font-size: 12px;
+font-weight: bold;
 }
 
 
@@ -317,7 +392,7 @@ button:hover{
         margin-top: 20px;
         background-color: black;
         width: 100vw;
-         height: 70vh;
+         height: 90vh;
         z-index: 3;
         align-items: flex-end;
         justify-content: flex-end;
@@ -325,8 +400,9 @@ button:hover{
     }
 
   main{
+    top:-25px;
     width: 100vw;
-    height: 70vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     display: none;
@@ -432,6 +508,8 @@ button:hover{
     width: 250px;
     opacity: 0;
 }
+
+
 
 .pokemon{
     height: 120px;
