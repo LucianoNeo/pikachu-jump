@@ -102,18 +102,30 @@ if ( pokePosition < 600 ){
 
  if (capturados > 25){
     pokemon.style.animationDuration='2.5s'
+    if(x < 600){
+        pokemon.style.animationDuration='3.5s'
+        }
  }
 
  if (capturados > 50){
     pokemon.style.animationDuration='2s'
+    if(x < 600){
+        pokemon.style.animationDuration='3s'
+        }
  }
 
  if (capturados > 100){
     pokemon.style.animationDuration='1.5s'
+    if(x < 600){
+        pokemon.style.animationDuration='2.5s'
+        }
  }
 
  if (capturados > 130){
     pokemon.style.animationDuration='1.3s'
+    if(x < 600){
+        pokemon.style.animationDuration='2.3s'
+        }
  }
 
 
