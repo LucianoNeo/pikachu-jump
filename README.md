@@ -3,7 +3,7 @@ Pikachu Jump é o primeiro jogo que desenvolvo utilizando os conhecimentos que v
 - O jogo está sendo desenvolvido com HTML5, CSS3 e JavaScript.
 - O jogo tem como objetivo saltar sobre os pokémon para assim capturá-los e adicioná-los à Pokedex.
 
-## Objetivos concluídos na VERSÃO 1.0:
+## Objetivos concluídos na VERSÃO 1.0 ✅
 - Adição da primeira geração de pokémon (1 ao 151)
 - Mecânica de pulo utilizando animações em CSS e evento escutador em Javascript
 - Colisão que causa game Over 
@@ -15,7 +15,7 @@ Pikachu Jump é o primeiro jogo que desenvolvo utilizando os conhecimentos que v
 - Final de jogo/créditos animado com CSS + JS
 - Responsividade para os principais mobiles
 
-## Objetivos para a versão 2.0:
+## Objetivos para a versão 2.0: 🧹
 - Sistema de rank
 - Compartilhamento de resultados nas redes sociais
 - Sistema de power-ups
