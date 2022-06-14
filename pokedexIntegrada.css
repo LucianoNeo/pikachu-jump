@@ -29,6 +29,24 @@ span{
     
 }
 
+.fechaPokedex{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 20%;
+    background-color: #c74f51;
+    z-index: 6;
+    color: white;
+    transform: translateY(-18px);
+    text-align: center;
+    align-items: center;
+    border: none;
+    justify-content: center;
+    left: 190px;
+}
+    
+}
+
 .pokedexInternaCima{
     position: absolute;
     width: 350px;
@@ -265,6 +283,8 @@ border: 2px solid #47484a;
                 z-index: 5;
                 
             }
+
+            
             
             .pokedexInternaCima{
                 position: absolute;

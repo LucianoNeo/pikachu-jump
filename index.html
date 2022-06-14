@@ -28,10 +28,11 @@
     </div>
 
     <div class="imgCentral" id="imgCentral">
-        <img src="assets/img/go.png" alt="" srcset="">
+        <img src="assets/img/go.png" class="confetti" id="confetti">
     </div>
     <div class="pokedex" id="pokedex">
         <div class="pokedexExternaCima">
+            <button class="fechaPokedex" onclick="fechaPokedex()">X</button>
         </div>
         <div class="pokedexInternaCima">
         <span id="nomePokedex" class="nome"></span>
@@ -69,7 +70,7 @@
             </div>
         
     </div>
-    <p class="versao">Versão BETA 0.95</p>
+    <p class="versao">Versão BETA 0.99</p>
     <div id="mostraPlacar" class="mostraPlacar">
     <img src="assets/img/pokeball.gif" alt="" srcset="" class="pokeballMenu">
     <span id="placar" class="placar">0</span>
@@ -88,7 +89,13 @@
     <img src="assets/img/bolaCaptura.gif" alt="" srcset="" class="pokeballCaptura" id="pokeballCaptura">
 
 
-    
+<section class="ending" id="ending">
+<img src="assets/img/confetti.gif" alt="" srcset="">
+<img src="assets/img/fireworks.gif" class="fogos">
+</section>
+<section class="escureceTela" id="escureceTela">
+
+</section>
 </main>
 <p>Desenvolvido por LucianoNeo 2022</p>
 <script src="./assets/script.js"></script>

@@ -40,7 +40,7 @@ main{
     margin: 0 auto;
     position: relative;
     display: none;
-   
+   margin-top: 10px;
 }
 .carregando{
     display: none;
@@ -76,6 +76,19 @@ main{
     align-items: center;
     z-index: 3;
     text-shadow: 3px 2px 7px #000000;
+}
+
+.crescetexto{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    text-shadow: 3px 2px 7px #000000;
+    font-size: 30px;
+    animation: crescetexto 2s ease-in-out;
+    
 }
 
 .imgCentral{
@@ -214,6 +227,42 @@ h1{
 .gameoveranimation{
     animation: gameover 5s;
 }
+.ending{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    float:left;
+}
+.ending img{
+    
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;
+    opacity: 0.7;
+}
+.fogos{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 50%;
+    z-index: 2;
+}
+
+.escureceTela{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.9;
+    z-index: 5;
+    animation: fadein 300s;
+}
 
 #iniciar{
     position: absolute;
@@ -249,7 +298,7 @@ h1{
     top: 288px;
     right: 253px;
     border: none;
-    z-index: 2;
+    z-index: 4;
     display: none;
     cursor: pointer;
     
@@ -269,6 +318,19 @@ h1{
     background-color: #eea71f;
     color: white;
     cursor: pointer;
+}
+
+@keyframes fadein{
+    0%{
+    opacity: 0;
+    }
+    80%{
+        opacity: 0.95;
+    }
+    100%{
+        
+        opacity: 0.9;
+    }
 }
 
 @keyframes fadeout{
@@ -375,6 +437,17 @@ h1{
 
 
 
+@keyframes crescetexto{
+    from{
+    font-size: 10px;
+    }
+    to{
+    font-size: 30px;
+    }
+}
+
+
+
 @media (max-width: 600px)
 {
     .info{
@@ -407,6 +480,7 @@ h1{
     display: flex;
     flex-direction: column;
     display: none;
+    margin-top: 10px;
   }
 
   
@@ -444,7 +518,7 @@ h1{
 
 .pokeballMenu{
     position: absolute;
-    top:210px;
+    top:223px;
     right: 140px;
     z-index: 2;
     width: 50px;

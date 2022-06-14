@@ -18,7 +18,7 @@ const mostraPokedex = document.getElementById('pokedex')
 const pokedexLista = document.getElementById('pokedexLista')
 let numeroPokemon = 1
 let carregado = false
-let capturados = 1
+let capturados = 150
 let placar = document.getElementById('placar')
 let iniciar = false
 let gameover = false
@@ -143,17 +143,18 @@ function carregaPokedex() {
 }
 
 function mostrarPokedex() {
+    carregaPokedex()  
     mostraPokedex.style.display='flex'
-    reiniciar.style.top='426px'
-    reiniciar.style.right='31px'
+    // reiniciar.style.top='426px'
+    // reiniciar.style.right='31px'
     pokedexBtn.style.display='none'
     mostraPlacar.style.display='none'
-    gameoverTela.style.display='none'
+    //gameoverTela.style.display='none'
     logo.style.display='none'
-    if(x < 600){
-       reiniciar.style.top='500px'
-       reiniciar.style.left='119px'
-       }
+    // if(x < 600){
+    //    reiniciar.style.top='500px'
+    //    reiniciar.style.left='119px'
+    //    }
     
 }
 
@@ -178,6 +179,12 @@ function atualizaPokedex(id) {
     tipos.innerHTML = conteudoTipos
     }
 }
+
+function fechaPokedex(){
+    mostraPokedex.style.display='none'
+    pokedexBtn.style.display='flex'
+}
+
 
 const jump =()=>{
    if(carregado){
@@ -219,29 +226,33 @@ if ( pokePosition < 600 ){
         }
  }
 
- if (capturados > 50){
-    pokemon.style.animationDuration='2s'
-    if(x < 600){
-        pokemon.style.animationDuration='3s'
-        }
- }
+//  if (capturados > 50){
+//     pokemon.style.animationDuration='2s'
+//     if(x < 600){
+//         pokemon.style.animationDuration='3s'
+//         }
+//  }
 
- if (capturados > 100){
-    pokemon.style.animationDuration='1.5s'
-    if(x < 600){
-        pokemon.style.animationDuration='2.5s'
-        }
- }
+//  if (capturados > 100){
+//     pokemon.style.animationDuration='1.5s'
+//     if(x < 600){
+//         pokemon.style.animationDuration='2.5s'
+//         }
+//  }
 
- if (capturados > 130){
-    pokemon.style.animationDuration='1.3s'
-    if(x < 600){
-        pokemon.style.animationDuration='2.3s'
-        }
- }
+//  if (capturados > 130){
+//     pokemon.style.animationDuration='1.3s'
+//     if(x < 600){
+//         pokemon.style.animationDuration='2.3s'
+//         }
+ //}
 
 
 if (pokePosition <= 125 && pikaPosition < 50 && !capturado){
+    pikachu.style.animation='none'
+    pikachu.style.bottom = '0'
+    pikachu.src = 'assets/img/pikaend.png'
+    pikachu.style.width= '100px'
     pikaBate.play()
     setTimeout(()=>{pikaFim.play()},500)
     music.pause()
@@ -250,16 +261,13 @@ if (pokePosition <= 125 && pikaPosition < 50 && !capturado){
     bg.style.left = '0'
     pokemon.style.animation = 'none'
     pokemon.style.left = '80px'
-    pikachu.style.bottom = '0'
-    pikachu.src = 'assets/img/pikaend.png'
-    pikachu.style.width= '100px'
     gameoverTela.style.display='block'
     gameoverTela.classList.add('gameoveranimation')
     gameoverTela.style.opacity='1'
     reiniciar.style.display='block'
     pokedexBtn.style.display='block'
     carregado = false
-    carregaPokedex()    
+      
     gameover = true
     
 }
@@ -272,7 +280,7 @@ if ( pokePosition < 115 ){
         
  }
 
-if ( pokePosition < 0 ){
+if ( pokePosition < 0){
     capturado = true
     pokemon.classList.remove('pokemon')
      capturados++
@@ -287,9 +295,31 @@ if ( pokePosition < 0 ){
     }
     pokemon.src=`assets/img/pokemon/pokemon (${capturados}).gif`
  }
+
+ if(capturados == 152){
+    final= true
+    finalJogo()
+ }
+
 },15)
 }
 }
 
+
+function finalJogo() {
+music.src='assets/mp3/musicaFinal.mp3'
+document.getElementById('ending').style.display='flex'
+pokedexBtn.style="display:flex;width:57px;position:absolute;top: 7px;right: 57px;border: none;z-index: 4;cursor: pointer;"
+if (x <600){
+    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 153px;right: 57px;border: none;z-index: 4;cursor: pointer;"
+}
+textoCentral.innerText ='PARABÉNS! VOCÊ COMPLETOU A POKEDEX'
+textoCentral.style.display='flex'
+textoCentral.classList.remove('textoCentral')
+textoCentral.classList.add('crescetexto')
+setTimeout(()=>{textoCentral.style.display='none'},7000)
+setTimeout(()=>{document.getElementById('escureceTela').style.display='flex'},1000000)
+    
+}
 document.addEventListener('keydown', jump)
 document.addEventListener('click', jump)
