@@ -12,11 +12,24 @@
 <link rel="stylesheet" href="pokedexIntegrada.css">
 </head>
 <body >
+    <div class="info" id="info">
+        <p>© 2022 Pokémon. © 1995–2022 Nintendo/Creatures Inc./GAME FREAK inc. Pokémon, os nomes dos personagens Pokémon, são marcas da Nintendo</p>
+        <button onclick="carregar()">OK</button>
+    </div>
     <section class="carregando" id="carregando">
+        
         <img src="assets/img/pikaCarregando.gif" alt="" class="pikaCarregando">
         <p class="textoCarregando">CARREGANDO</p>
     </section>
 <main id="telaInicial">
+
+    <div class="textoCentral" id="textoCentral">
+        <h2>READY?</h2>
+    </div>
+
+    <div class="imgCentral" id="imgCentral">
+        <img src="assets/img/go.png" alt="" srcset="">
+    </div>
     <div class="pokedex" id="pokedex">
         <div class="pokedexExternaCima">
         </div>
@@ -56,14 +69,13 @@
             </div>
         
     </div>
-    <p class="versao">Versão BETA 0.92</p>
+    <p class="versao">Versão BETA 0.95</p>
     <div id="mostraPlacar" class="mostraPlacar">
-    <h1>Pokémon Capturados</h1><br>
     <img src="assets/img/pokeball.gif" alt="" srcset="" class="pokeballMenu">
     <span id="placar" class="placar">0</span>
     
     </div>
-    <audio autoplay controls class="musica" id="musica"> <source src="assets/mp3/musica.mp3" type='audio/mp3'></audio>
+    <audio loop autoplay controls class="musica" id="musica"> <source src="assets/mp3/temaInicial.mp3" type='audio/mp3'></audio>
     <img src="assets/img/waving-pikachu.gif" alt="" srcset="" class="pikainicio" id="pikainicio">
     <img src="assets/img/gameover.png" alt="" srcset="" class="gameover" id="gameover">
     <button id="iniciar" onclick="iniciaJogo()">INICIAR</button>

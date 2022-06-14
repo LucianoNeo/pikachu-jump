@@ -2,7 +2,7 @@ const pikainicio = document.getElementById('pikainicio')
 const pikachu = document.getElementById('pikachu')
 const pokemon = document.getElementById('pokemon')
 const bg = document.getElementById('bg')
-const gameover = document.getElementById('gameover')
+const gameoverTela = document.getElementById('gameover')
 const iniciarbtn = document.getElementById('iniciar')
 const reiniciar = document.getElementById('reiniciar')
 const pokedexBtn = document.getElementById('pokedexBtn')
@@ -12,7 +12,7 @@ const jumpBtn = document.getElementById('jumpbtn')
 const pokebola = document.getElementById('pokeballCaptura')
 const carregando = document.getElementById('carregando')
 const telaInicial = document.getElementById('telaInicial')
-
+let textoCentral = document.getElementById('textoCentral')
 const pokedex = []
 const mostraPokedex = document.getElementById('pokedex') 
 const pokedexLista = document.getElementById('pokedexLista')
@@ -21,8 +21,10 @@ let carregado = false
 let capturados = 1
 let placar = document.getElementById('placar')
 let iniciar = false
+let gameover = false
+let final = false
 let capturado = false
-let arrayPoke = {}
+let infoPoke = {}
 let descPoke = {}
 const tipos = document.getElementById('tipos')
 const pokedexCapturados = document.getElementById('pokedexCapturados')
@@ -33,12 +35,13 @@ y = window.screen.height;
 
 // SONS
 const music = document.getElementById('musica')
-music.volume =0.02
+music.volume =0.04
 const jumpSound = new Audio('assets/mp3/jump.mp3');
 const capturaSound = new Audio('assets/mp3/captura.mp3');
+const readyGo = new Audio('assets/mp3/readygo.mp3');
 capturaSound.playbackRate = 2
 capturaSound.volume =0.05
-jumpSound.volume =0.08
+jumpSound.volume =0.1
 const gameoverSound = new Audio('assets/mp3/gameover.mp3');
 const pikaInicio = new Audio('assets/mp3/pikachuInicio.mp3');
 const pikaFim = new Audio('assets/mp3/pikachuFim.mp3');
@@ -57,7 +60,7 @@ descPromises.push(fetch(getDescricoes(i)).then(response => response.json()))
 
 Promise.all(pokemonPromises)
 .then(pokemons =>{
-    arrayPoke = pokemons
+    infoPoke = pokemons
 })
 Promise.all(descPromises)
 .then(descricoes =>{
@@ -73,21 +76,51 @@ fetchPokemon()
 
 
 
-setInterval(()=>{
-    carregando.style.display ='none'
-    telaInicial.style.display ='flex'
-},1000)
+
+
+function carregar() {
+    document.getElementById('info').style.display='none'
+    carregando.style.display ='flex'
+    setTimeout(()=>{
+        carregando.style.display ='none'
+        telaInicial.style.display ='flex'
+        music.play()
+        pikaInicio.play()
+    },2000)        
+}
 
 function iniciaJogo(){
-    gameover.style.display='none'
-    music.play()
+    gameover = false
+    final = false
+    gameoverTela.style.display='none'
     iniciarbtn.style.display = 'none'
     pikainicio.style.display = 'none'
     mostraPlacar.style.display = 'block'
     pikachu.style.display = 'block'
-    pokemon.style.display = 'block'
     logo.style = 'position:absolute; width:300px;top: 20px;left: 10px;'
+    music.src='assets/mp3/musica.mp3'
+    textoCentral.style.display='flex'
+    
+    iniciar = true
     rodaJogo()
+}
+
+function reiniciaJogo(){
+    pokemon.style.left ='1200px'
+    mostraPokedex.style.display='none'
+    pokedexBtn.style.display='none'
+    reiniciar.style.display='none'
+    pikachu.style.display = 'none'
+    gameover = false
+    final = false
+    iniciar = false
+    gameoverTela.style.display='none'
+    iniciarbtn.style.display = 'block'
+    pikainicio.style.display = 'block'
+    mostraPlacar.style.display = 'block'
+    pokemon.style.display ='none'
+    
+    music.src='assets/mp3/temaInicial.mp3'
 }
 
 
@@ -115,7 +148,7 @@ function mostrarPokedex() {
     reiniciar.style.right='31px'
     pokedexBtn.style.display='none'
     mostraPlacar.style.display='none'
-    gameover.style.display='none'
+    gameoverTela.style.display='none'
     logo.style.display='none'
     if(x < 600){
        reiniciar.style.top='500px'
@@ -130,12 +163,12 @@ function atualizaPokedex(id) {
     let idPoke = document.getElementById('idPoke');
     let facePokemon = document.getElementById('faces');
     let nomePokedex = document.getElementById('nomePokedex');
-    let nomeSelecionado = arrayPoke[id-1].name
+    let nomeSelecionado = infoPoke[id-1].name
     let descricaoPoke = descPoke[id-1].flavor_text_entries[0].flavor_text
     let descricao = document.getElementById('descricao')
-    let conteudoTipos = `<img src="assets/img/tipos/${arrayPoke[id-1].types[0].type.name}.webp">`
-    if(arrayPoke[id-1].types[1]){
-        conteudoTipos += `<img src="assets/img/tipos/${arrayPoke[id-1].types[1].type.name}.webp">`
+    let conteudoTipos = `<img src="assets/img/tipos/${infoPoke[id-1].types[0].type.name}.webp">`
+    if(infoPoke[id-1].types[1]){
+        conteudoTipos += `<img src="assets/img/tipos/${infoPoke[id-1].types[1].type.name}.webp">`
     }
     if(liPoke.classList.contains('capturado')){ 
     idPoke.innerText = `ID #${id}`
@@ -157,7 +190,20 @@ const jump =()=>{
 }
 
 function rodaJogo(){
+    
+    if(iniciar){
+        setTimeout(()=>{readyGo.play()},500)
+            setTimeout(()=>{
+            textoCentral.style.display='none'
+            document.getElementById('imgCentral').style.display='flex'
+            setTimeout(()=>{document.getElementById('imgCentral').style.display='none'},1000)
+            pokemon.style.display = 'block'
+            },2000)
+
 const loop = setInterval(()=>{
+    if(gameover || final){
+        return
+    }
 const pokePosition = window.getComputedStyle(pokemon).left.replace('px','')
 const pikaPosition = window.getComputedStyle(pikachu).bottom.replace('px','')
 
@@ -207,14 +253,14 @@ if (pokePosition <= 125 && pikaPosition < 50 && !capturado){
     pikachu.style.bottom = '0'
     pikachu.src = 'assets/img/pikaend.png'
     pikachu.style.width= '100px'
-    gameover.style.display='block'
-    gameover.classList.add('gameoveranimation')
-    gameover.style.opacity='1'
+    gameoverTela.style.display='block'
+    gameoverTela.classList.add('gameoveranimation')
+    gameoverTela.style.opacity='1'
     reiniciar.style.display='block'
     pokedexBtn.style.display='block'
     carregado = false
     carregaPokedex()    
-    clearInterval(loop)
+    gameover = true
     
 }
 
@@ -241,9 +287,9 @@ if ( pokePosition < 0 ){
     }
     pokemon.src=`assets/img/pokemon/pokemon (${capturados}).gif`
  }
-},1)
+},15)
 }
-
+}
 
 document.addEventListener('keydown', jump)
 document.addEventListener('click', jump)

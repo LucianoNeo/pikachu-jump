@@ -14,25 +14,38 @@ p{
     margin-top: 20px;
 }
 
-
+.info{
+    margin: 0 auto;
+    background-color: black;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.info button{
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100px;
+    padding: 10px;
+}
 
 main{
-    
+    background-color: black;
     width: 800px;
     height: 500px;
     border: 1px solid white;
     overflow: hidden;
     margin: 0 auto;
-    margin-top: 20px;
     position: relative;
     display: none;
    
 }
 .carregando{
-    display: flex;
+    display: none;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 20px;
     background-color: black;
     width: 800px;
     height: 500px;
@@ -51,6 +64,35 @@ main{
     font-size: 25px;
     animation: piscando 2s infinite ease-in;
 }
+
+
+.textoCentral{
+    display: none;
+    font-size: 10vw;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    text-shadow: 3px 2px 7px #000000;
+}
+
+.imgCentral{
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    
+}
+.imgCentral img{
+    opacity: 0;
+    width: 60%;
+    animation: fadeout 1s ease-in;
+}
+
 
 h1{
     position: absolute;
@@ -155,13 +197,9 @@ h1{
     display:none;
 }
 
-.pokemonLevel2{
-    height: 120px;
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-    //left:1200px;
-    animation: pokemonLevel2 3s infinite linear;
+.fadeout{
+    display: none;
+    animation: fadeout 1s;
 }
 
 .gameover{
@@ -233,6 +271,15 @@ h1{
     cursor: pointer;
 }
 
+@keyframes fadeout{
+    0%{
+    opacity: 1;
+    }
+    100%{
+        width: 100vw;
+        opacity: 0;
+    }
+}
 
 @keyframes piscando{
     0%{
@@ -330,15 +377,23 @@ h1{
 
 @media (max-width: 600px)
 {
-
-    .carregando{
-        display: flex;
-        flex-direction: column;
+    .info{
         margin: 0 auto;
-        margin-top: 20px;
         background-color: black;
         width: 100vw;
-         height: 90vh;
+        height:92vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .carregando{
+        display: none;
+        flex-direction: column;
+        margin: 0 auto;
+        background-color: black;
+        width: 100vw;
+        height: 92vh;
         z-index: 3;
         align-items: flex-end;
         justify-content: flex-end;
