@@ -62,7 +62,6 @@ Promise.all(pokemonPromises)
 Promise.all(descPromises)
 .then(descricoes =>{
     descPoke = descricoes
-    console.log(arrayPoke)
 })
 
 
@@ -80,7 +79,6 @@ setInterval(()=>{
 },1000)
 
 function iniciaJogo(){
-    iniciar = true
     gameover.style.display='none'
     music.play()
     iniciarbtn.style.display = 'none'
@@ -89,8 +87,9 @@ function iniciaJogo(){
     pikachu.style.display = 'block'
     pokemon.style.display = 'block'
     logo.style = 'position:absolute; width:300px;top: 20px;left: 10px;'
-    
+    rodaJogo()
 }
+
 
 function carregaPokedex() {
     let lis = document.querySelectorAll('li');
@@ -106,14 +105,14 @@ function carregaPokedex() {
         <img src="assets/img/pokedex/pokemon (${pokedex[index]}).png" class="pokedexImg" alt="">`
     }
     pokedexCapturados.innerText =`Capturados: ${capturados-1}`
-    pokedexCompletada.innerText =`Completada: ${((capturados*100)/151).toFixed(0)}%`
+    pokedexCompletada.innerText =`Completada: ${(((capturados-1)*100)/151).toFixed(0)}%`
     
 }
 
 function mostrarPokedex() {
     mostraPokedex.style.display='flex'
     reiniciar.style.top='426px'
-    reiniciar.style.right='356px'
+    reiniciar.style.right='31px'
     pokedexBtn.style.display='none'
     mostraPlacar.style.display='none'
     gameover.style.display='none'
@@ -122,6 +121,7 @@ function mostrarPokedex() {
        reiniciar.style.top='500px'
        reiniciar.style.left='119px'
        }
+    
 }
 
 
@@ -156,9 +156,8 @@ const jump =()=>{
 }
 }
 
+function rodaJogo(){
 const loop = setInterval(()=>{
-    
-if (iniciar){
 const pokePosition = window.getComputedStyle(pokemon).left.replace('px','')
 const pikaPosition = window.getComputedStyle(pikachu).bottom.replace('px','')
 
@@ -205,7 +204,6 @@ if (pokePosition <= 125 && pikaPosition < 50 && !capturado){
     bg.style.left = '0'
     pokemon.style.animation = 'none'
     pokemon.style.left = '80px'
-    pikachu.style.animation = 'none'
     pikachu.style.bottom = '0'
     pikachu.src = 'assets/img/pikaend.png'
     pikachu.style.width= '100px'
@@ -215,9 +213,7 @@ if (pokePosition <= 125 && pikaPosition < 50 && !capturado){
     reiniciar.style.display='block'
     pokedexBtn.style.display='block'
     carregado = false
-    carregaPokedex()
-    
-    
+    carregaPokedex()    
     clearInterval(loop)
     
 }
@@ -244,14 +240,9 @@ if ( pokePosition < 0 ){
         pokedex.push(capturados-1)
     }
     pokemon.src=`assets/img/pokemon/pokemon (${capturados}).gif`
-    
-     
  }
-
- 
-}},1)
-
-
+},1)
+}
 
 
 document.addEventListener('keydown', jump)

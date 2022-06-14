@@ -90,7 +90,7 @@ h1{
 
 .pokeballMenu{
     position: absolute;
-    top:60px;
+    top:70px;
     right: 136px;
     z-index: 2;
     width: 50px;
@@ -206,42 +206,32 @@ h1{
 }
 
 #pokedexBtn{
+    width: 72px;
     position: absolute;
-    top: 300px;
-    right: 255px;
+    top: 288px;
+    right: 253px;
     border: none;
     z-index: 2;
-    border-radius: 15px;
-    color: black;
-    background-color:yellow;
-    padding: 15px;
-    font-weight: bold;
     display: none;
+    cursor: pointer;
+    
 }
 
+#pokedexBtn:hover{
+    transform: scale(1.2);
+}
 
-
-button:hover{
-    background-color: rgb(132, 77, 38);
+#iniciar:hover {
+    background-color: #eea71f;
     color: white;
+    cursor: pointer;
 }
 
-/* .containerPokedex{
-    
-    background-color: rgb(226, 19, 19);
-    margin: 0 auto;
-    width: 800px;
-    height: 400px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    border: 10px solid rgb(226, 216, 208);
-    z-index: 5;
-    border-radius: 10px;
-    display: none;
-    
-} */
+#reiniciar:hover {
+    background-color: #eea71f;
+    color: white;
+    cursor: pointer;
+}
 
 
 @keyframes piscando{
@@ -459,7 +449,7 @@ margin: 0 auto;
 .gameover{
     position: absolute;
     top: 300px;
-    left: 55px;
+    left: 86px;
     z-index: 2;
     width: 250px;
     opacity: 0;
@@ -477,41 +467,16 @@ margin: 0 auto;
     display:none;
 }
 
-.pokedex{
-    overflow: auto;
-    background-color: rgb(226, 19, 19);
-    margin: 0 auto;
-    width: 95vw;
-    height: 50vh;
-    margin-top: 20px;
-    display: flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    border: 10px solid rgb(226, 216, 208);
-    z-index: 5;
-    border-radius: 10px;
-    display: none;
-    
-}
-
 #pokedexBtn{
+    width: 72px;
     position: absolute;
-    width: 145px;
-    height: 60px;
-    top: 450px;
-    right: 39px;
+    top: 441px;
+    right: 46px;
     border: none;
     z-index: 2;
-    border-radius: 15px;
-    color: black;
-    background-color:yellow;
-    padding: 15px;
-    font-weight: bold;
     display: none;
+    cursor: pointer;
 }
 
-.pokedex ul{
-    width: 90%;
-}
 
 }

@@ -247,4 +247,239 @@ border: 2px solid #47484a;
 
         }
 
-      
+        @media (max-width: 600px)
+        {
+
+            .pokedex{
+                margin-top: 20px;
+            }
+            .pokedexExternaCima{
+                position: absolute;
+                width:410px;
+                left: 5px;
+                height: 250px;
+                margin: 0 auto;
+                border-radius: 20px 20px 0 0;
+                border: 15px solid #c74f51;
+                background-color: #323232;
+                z-index: 5;
+                
+            }
+            
+            .pokedexInternaCima{
+                position: absolute;
+                width: 350px;
+                height: 200px;
+                z-index: 6;
+                top: 24px;
+                left: 30px;
+                background-color: #47484a;
+                
+            }
+            
+            .pokedexExternaBaixo{
+                position: absolute;
+                top: 170px;
+                left: 5px;
+                width:410px;
+                height: 299px;
+                border: 15px solid #91383a;
+                background-color: #323232;
+                z-index: 4;
+            }
+            
+            .pokedexInternaBaixo{
+                position: absolute;
+                width: 355px;
+                height: 180px;
+                z-index: 4;
+                top: 258px;
+                left: 33px;
+                background-color: #47484a;
+                border-radius: 10px;
+                
+            }
+            
+            .lateralEsquerda{
+            display: none;
+            position: absolute;
+            width: 100px;
+            height: 300px;
+            top: 170px;
+            left: 20px;
+            z-index: 4;
+            background-color:  #c74f51;
+            border-radius: 100px;
+            border: 2px solid #47484a;
+            }
+            
+            
+            .lateralDireita{
+                display: none;
+                position: absolute;
+                width: 100px;
+                height: 299px;
+                top: 170px;
+                left: 430px;
+                background-color:  #c74f51;
+                border-radius: 100px;
+                border: 2px solid #47484a;
+                z-index: 3;
+                }
+                
+                .botao{
+                    display: none;
+                    position: absolute;
+                    width: 30px;
+                    height: 30px;
+                    top: 22px;
+                    left: 7px;
+                    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(74,200,226,1) 35%, rgb(29, 29, 223) 93%);
+                    z-index: 5;
+                    border-radius: 50%;
+                    border: 3px solid white;
+                }
+                
+            /* CSS GRID DESCRIÇÃO E FOTO DO POKEMON */
+                .parent {
+                    position: relative;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-column-gap: 0px;
+                    grid-row-gap: 0px;
+                    margin-top: 50px;
+                    
+                    }
+                    
+                    .div1 {         
+                        display: flex;
+                        background-color: #626365;
+                        grid-area: 1 / 1 / 3 / 2;
+                        border: 2px solid #23abe5;
+                        height: 140px;
+                        overflow: hidden;
+                        align-items: center;
+                        justify-content: center;
+                    
+                    }
+                    .div2 { 
+                        background-color: #626365;
+                        transform: translateY(-70px);
+                        grid-area: 2 / 2 / 3 / 4; 
+                        border: 2px solid #23abe5;
+                        height: 105px;
+                    }
+                    .div3 { 
+                        background-color: #626365;
+                        grid-area: 1 / 2 / 2 / 4; 
+                        border: 2px solid #23abe5;
+                        height: 40px;
+                        padding: 5px;
+                    }
+            
+            /* FIM CSS GRID DESCRIÇÃO E FOTO DO POKEMON */
+            
+                    .descricao{
+                        font-size: 12px;
+                    }
+            
+                    .faces{
+                        width: 100px;
+                    }
+            
+                    .nome{
+                        position: absolute;
+                        top: -15px;
+                        margin-top: 20px;
+                        left: 10px;
+                    }
+            
+                    .idPoke{
+                        position: absolute;
+                        top: -15px;
+                        left: 140px;
+                        margin-top: 20px;
+                    }
+            
+                    .tipos{
+                        width: 125px;
+                        height: 30px;
+                        position: absolute;
+                        top: -9px;
+                        left: 217px;
+                        margin-top: 20px;
+                        z-index: 3;
+                        justify-content: space-around;
+                        align-items: center;
+                        display: flex;
+                    }
+            
+                    .pokedexBaixo{
+                        overflow: auto;
+                        height: 75%;
+                        border: 1px solid black;
+                    }
+            
+                    .pokedex ul{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        z-index: 3;
+                        margin: 0 auto;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 3px;
+                    }
+                    
+                    .pokedex li{
+                        display: flex;
+                        flex-direction: column;
+                        background-color: #626365;
+                        padding: 5px;
+                        width: 80px;
+                        height: 80px;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid #323232;
+                    }
+                    
+                    li:hover{
+                        border: 2px solid white;
+                    }
+                    .pokedexItem{
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0 auto;
+                        width: 50px;
+                        height: 50px;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .pokedexImg{
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0 auto;
+                        width: 50px;
+                        height: 50px;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    footer{
+                        display: flex;
+                        width: 100%;
+                        height: 50px;
+                        align-items: center;
+                        text-align: center;
+                        justify-content:center;
+            
+                    }
+            
+                    footer img{
+                        height: 30px;
+                        align-self: center;
+                    }
+        }
