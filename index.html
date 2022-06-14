@@ -32,7 +32,7 @@
     </div>
     <div class="pokedex" id="pokedex">
         <div class="pokedexExternaCima">
-            <button class="fechaPokedex" onclick="fechaPokedex()">X</button>
+            <button class="fechaPokedex" onclick="fechaPokedex()">x</button>
         </div>
         <div class="pokedexInternaCima">
         <span id="nomePokedex" class="nome"></span>
@@ -70,17 +70,21 @@
             </div>
         
     </div>
-    <p class="versao">Versão BETA 0.992</p>
+    <p class="versao">Versão BETA 0.995</p>
     <div id="mostraPlacar" class="mostraPlacar">
-    <img src="assets/img/pokeball.gif" alt="" srcset="" class="pokeballMenu">
-    <span id="placar" class="placar">0</span>
-    
+        <img src="assets/img/pokeball.gif" alt="" srcset="" class="pokeballMenu">
+        <span id="placar" class="placar">0</span>
+        
     </div>
-    <audio loop autoplay controls class="musica" id="musica"> <source src="assets/mp3/temaInicial.mp3" type='audio/mp3'></audio>
+
+    <audio autoplay controls class="musica" id="musica"> 
+        <source src="assets/mp3/temaInicial.mp3" type='audio/mp3'>
+    </audio>
+
     <img src="assets/img/waving-pikachu.gif" alt="" srcset="" class="pikainicio" id="pikainicio">
     <img src="assets/img/gameover.png" alt="" srcset="" class="gameover" id="gameover">
     <button id="iniciar" onclick="iniciaJogo()">INICIAR</button>
-    <button id="reiniciar" onclick="(document.location.reload(true))">REINICIAR</button>
+    <img src="assets/img/restart.png" id="reiniciar" onclick="(document.location.reload(true))">
     <img src="assets/img/pokedex.png" id="pokedexBtn" onclick="mostrarPokedex()">
     <img src="assets/img/logo.png" alt="" srcset="" class="logo" id="logo">
     <img src="assets/img/pikachu.gif" alt="" srcset="" class="pikachu" id="pikachu">
@@ -90,12 +94,19 @@
 
 
 <section class="ending" id="ending">
-<img src="assets/img/confetti.gif" alt="" srcset="">
-<img src="assets/img/fireworks.gif" class="fogos">
+    <img src="assets/img/confetti.gif" alt="" srcset="">
+    <img src="assets/img/fireworks.gif" class="fogos">
 </section>
-<section class="escureceTela" id="escureceTela">
 
-</section>
+<section class="escureceTela" id="escureceTela"></section>
+
+    <div class="instrucoesPC" id="instrucoesPC">
+        <span>Aperta a tecla</span><span class="espaco">ESPAÇO</span> <span>para pular!</span>
+    </div>
+    <div class="instrucoesMobile" id="instrucoesMobile">
+        <span>Toque na tela para pular</span>
+        <img src="assets/img/toque.png" class="toque">
+    </div>
 </main>
 <p>Desenvolvido por LucianoNeo 2022</p>
 <script src="./assets/script.js"></script>

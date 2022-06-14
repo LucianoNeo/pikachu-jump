@@ -42,6 +42,32 @@ main{
     display: none;
    margin-top: 10px;
 }
+
+.instrucoesPC{
+    position: absolute;
+    display: flex;
+    top: 449px;
+    z-index: 3;
+    width: 792px;
+    justify-content: flex-end;
+    text-align: center;
+    text-shadow: 3px 2px 7px #000000;
+    align-items: center;
+    animation: piscando 2s infinite ease-in;
+}
+
+
+
+.espaco{
+    height: 30px;
+    background-color: #333;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    font-size: 10px;
+    text-align: center;
+    
+}
 .carregando{
     display: none;
     flex-direction: column;
@@ -127,7 +153,7 @@ h1{
 
 .placar{
     position: absolute;
-    top:50px;
+    top:-13px;
     right: 50px;
     z-index: 2;
     color: aliceblue;
@@ -136,16 +162,17 @@ h1{
 }
 
 .musica{
+    
     width: 100px;
     position: absolute;
-    top:120px;
-    right: 50px;
+    top: 4px;
+    right: -52px;
     z-index: 3;
 }
 
 .pokeballMenu{
     position: absolute;
-    top:70px;
+    top:10px;
     right: 136px;
     z-index: 2;
     width: 50px;
@@ -168,7 +195,6 @@ h1{
     animation: rolafundo 3.6s infinite linear;
     z-index: 1;
     top: -5px;
-    //right: -80px;
 }
 
 
@@ -205,7 +231,6 @@ h1{
     position: absolute;
     bottom: 0;
     z-index: 2;
-    //left:1200px;
     animation: pokemon 2.9s infinite linear;
     display:none;
 }
@@ -279,16 +304,12 @@ h1{
 
 
 #reiniciar{
+    width: 84px;
     position: absolute;
-    top: 300px;
-    right: 452px;
+    top: 285px;
+    right: 467px;
     border: none;
     z-index: 2;
-    border-radius: 15px;
-    color: black;
-    background-color:yellow;
-    padding: 15px;
-    font-weight: bold;
     display: none;
 }
 
@@ -315,9 +336,7 @@ h1{
 }
 
 #reiniciar:hover {
-    background-color: #eea71f;
-    color: white;
-    cursor: pointer;
+    transform: scale(1.2);
 }
 
 @keyframes fadein{
@@ -484,13 +503,30 @@ h1{
   }
 
   
+
+.instrucoesMobile{
+        position: absolute;
+        width: 100vw;
+        height: -4vh;
+        z-index: 3;
+        top: 383px;
+        right: -20px;
+        font-size: 25px;
+        align-items: center;
+        display: flex;
+        text-shadow: 3px 2px 7px #000000;
+        animation: piscando 2s infinite ease-in;
+}
+
+.toque{
+    width: 100px;
+}
     .bg-inicial{
         position: absolute;
         height: 110%;
         animation: rolafundo 6s infinite linear;
         z-index: 1;
         top: -5px;
-        //right: -80px;
   }
 
   h1{
@@ -508,8 +544,8 @@ h1{
 
 .placar{
     position: absolute;
-    top:200px;
-    right: 50px;
+    top: 129px;
+    right: 8px;
     z-index: 2;
     color: aliceblue;
     font-size: 45px;
@@ -518,8 +554,8 @@ h1{
 
 .pokeballMenu{
     position: absolute;
-    top:223px;
-    right: 140px;
+    top: 151px;
+    right: 95px;
     z-index: 2;
     width: 50px;
 }
@@ -549,36 +585,30 @@ h1{
     margin: 0 auto;
 }
 
-
 #reiniciar{
-position: absolute;
-width: 145px;
-height: 60px;
-top: 450px;
-left: 25px;
-border: none;
-z-index: 3;
-border-radius: 15px;
-color: black;
-background-color: yellow;
-padding: 15px;
-font-weight: bold;
-display: none;
-margin: 0 auto;
+    width: 84px;
+    position: absolute;
+    top: 433px;
+    right: 252px;
+    border: none;
+    z-index: 3;
+    display: none;
 }
+
+
 
 .musica{
     width: 100px;
     position: absolute;
-    top:10px;
-    right: 10px;
+    top: 60px;
+    right: -54px;
     z-index: 3;
 }
 
 .gameover{
     position: absolute;
-    top: 300px;
-    left: 86px;
+    top: 237px;
+    left: 73px;
     z-index: 2;
     width: 250px;
     opacity: 0;
@@ -602,7 +632,7 @@ margin: 0 auto;
     top: 441px;
     right: 46px;
     border: none;
-    z-index: 2;
+    z-index: 4;
     display: none;
     cursor: pointer;
 }

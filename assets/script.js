@@ -18,7 +18,7 @@ const mostraPokedex = document.getElementById('pokedex')
 const pokedexLista = document.getElementById('pokedexLista')
 let numeroPokemon = 1
 let carregado = false
-let capturados = 1
+let capturados = 150
 let placar = document.getElementById('placar')
 let iniciar = false
 let gameover = false
@@ -87,12 +87,17 @@ function carregar() {
         telaInicial.style.display ='flex'
         music.play()
         pikaInicio.play()
+        if(x < 480){
+        document.getElementById('instrucoesPC').style.display='none'    
+        }
     },2000)        
 }
 
 function iniciaJogo(){
     gameover = false
     final = false
+    document.getElementById('instrucoesPC').style.display='none'
+    document.getElementById('instrucoesMobile').style.display='none'
     gameoverTela.style.display='none'
     iniciarbtn.style.display = 'none'
     pikainicio.style.display = 'none'
@@ -312,9 +317,9 @@ textoCentral.classList.remove('textoCentral')
 textoCentral.classList.add('crescetexto')
 setTimeout(()=>{
     textoCentral.style.display='none'
-    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 7px;right: 57px;border: none;z-index: 4;cursor: pointer;"
+    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 59px;right: 63px;border: none;z-index: 4;cursor: pointer;"
 if (x <600){
-    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 153px;right: 57px;border: none;z-index: 4;cursor: pointer;"
+    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 211px;right: 16px;border: none;z-index: 4;cursor: pointer;"
 }
 },7000)
 setTimeout(()=>{document.getElementById('escureceTela').style.display='flex'},1000000)
