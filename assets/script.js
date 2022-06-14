@@ -18,12 +18,13 @@ const mostraPokedex = document.getElementById('pokedex')
 const pokedexLista = document.getElementById('pokedexLista')
 let numeroPokemon = 1
 let carregado = false
-let capturados = 150
+let capturados = 1
 let placar = document.getElementById('placar')
 let iniciar = false
 let gameover = false
 let final = false
 let capturado = false
+let pokedexCarregada = false
 let infoPoke = {}
 let descPoke = {}
 const tipos = document.getElementById('tipos')
@@ -125,6 +126,7 @@ function reiniciaJogo(){
 
 
 function carregaPokedex() {
+    if(!pokedexCarregada){
     let lis = document.querySelectorAll('li');
     for (let index = 1; index <= 151; index++) {
         pokedexLista.innerHTML += `
@@ -139,22 +141,16 @@ function carregaPokedex() {
     }
     pokedexCapturados.innerText =`Capturados: ${capturados-1}`
     pokedexCompletada.innerText =`Completada: ${(((capturados-1)*100)/151).toFixed(0)}%`
+}
+pokedexCarregada = true
     
 }
 
 function mostrarPokedex() {
     carregaPokedex()  
     mostraPokedex.style.display='flex'
-    // reiniciar.style.top='426px'
-    // reiniciar.style.right='31px'
     pokedexBtn.style.display='none'
     mostraPlacar.style.display='none'
-    //gameoverTela.style.display='none'
-    logo.style.display='none'
-    // if(x < 600){
-    //    reiniciar.style.top='500px'
-    //    reiniciar.style.left='119px'
-    //    }
     
 }
 
@@ -309,15 +305,18 @@ if ( pokePosition < 0){
 function finalJogo() {
 music.src='assets/mp3/musicaFinal.mp3'
 document.getElementById('ending').style.display='flex'
-pokedexBtn.style="display:flex;width:57px;position:absolute;top: 7px;right: 57px;border: none;z-index: 4;cursor: pointer;"
-if (x <600){
-    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 153px;right: 57px;border: none;z-index: 4;cursor: pointer;"
-}
+
 textoCentral.innerText ='PARABÉNS! VOCÊ COMPLETOU A POKEDEX'
 textoCentral.style.display='flex'
 textoCentral.classList.remove('textoCentral')
 textoCentral.classList.add('crescetexto')
-setTimeout(()=>{textoCentral.style.display='none'},7000)
+setTimeout(()=>{
+    textoCentral.style.display='none'
+    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 7px;right: 57px;border: none;z-index: 4;cursor: pointer;"
+if (x <600){
+    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 153px;right: 57px;border: none;z-index: 4;cursor: pointer;"
+}
+},7000)
 setTimeout(()=>{document.getElementById('escureceTela').style.display='flex'},1000000)
     
 }
