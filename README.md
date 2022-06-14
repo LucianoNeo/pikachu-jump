@@ -12,6 +12,7 @@ Pikachu Jump é o primeiro jogo que desenvolvo utilizando os conhecimentos que v
 - Aumento de dificuldade/velocidade quanto maior for o número de capturas
 - Mostrar a pokédex ao término do jogo, mostrando quais pokémon foram capturados pelo jogador
 - Pokedéx desenhada completamente com CSS
+- Utilização de API para alimentar as informações da pokedex
 - Final de jogo/créditos animado com CSS + JS
 - Responsividade para os principais mobiles
 
