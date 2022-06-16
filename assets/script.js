@@ -18,6 +18,7 @@ const mostraPokedex = document.getElementById('pokedex')
 const pokedexLista = document.getElementById('pokedexLista')
 let numeroPokemon = 1
 let carregado = false
+let loading = true
 let capturados = 1
 let placar = document.getElementById('placar')
 let iniciar = false
@@ -82,16 +83,38 @@ fetchPokemon()
 function carregar() {
     document.getElementById('info').style.display='none'
     carregando.style.display ='flex'
-    setTimeout(()=>{
-        carregando.style.display ='none'
-        telaInicial.style.display ='flex'
-        music.play()
-        pikaInicio.play()
-        if(x < 480){
-        document.getElementById('instrucoesPC').style.display='none'    
+    var cache = document.createElement("CACHE");
+    cache.style = "position:absolute;z-index:-1000;opacity:0;";
+    document.body.appendChild(cache);
+
+    
+        for (let index = 1; index < 152; index++) {
+            var img = new Image();
+            img.src = `assets/img/pokemon/pokemon (${index}).gif`
+            img.style = "position:absolute";
+            cache.appendChild(img);
+            console.log('carregou pokemon numero: '+index)    
         }
-    },2000)        
+        cache.style.display='none'
+        loading= false
+        if(!loading){
+            setTimeout(()=>{
+            carregando.style.display ='none'
+            telaInicial.style.display ='flex'
+            music.play()
+            pikaInicio.play()
+            if(x < 480){
+            document.getElementById('instrucoesPC').style.display='none'    
+            }
+            },1000)
+        }
+        
+        
+
 }
+        
+
+
 
 function iniciaJogo(){
     gameover = false
