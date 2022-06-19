@@ -62,7 +62,7 @@ descPromises.push(fetch(getDescricoes(i)).then(response => response.json()))
 
 Promise.all(pokemonPromises)
 .then(pokemons =>{
-   console.log(infoPoke = pokemons)
+    infoPoke = pokemons
 })
 Promise.all(descPromises)
 .then(descricoes =>{
@@ -93,8 +93,7 @@ function carregar() {
             var img = new Image();
             img.src = `assets/img/pokemon/pokemon (${index}).gif`
             img.style = "position:absolute";
-            cache.appendChild(img);
-            console.log('carregou pokemon numero: '+index)    
+            cache.appendChild(img);   
         }
         cache.style.display='none'
         loading= false
