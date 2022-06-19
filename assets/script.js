@@ -62,10 +62,11 @@ descPromises.push(fetch(getDescricoes(i)).then(response => response.json()))
 
 Promise.all(pokemonPromises)
 .then(pokemons =>{
-    infoPoke = pokemons
+   console.log(infoPoke = pokemons)
 })
 Promise.all(descPromises)
 .then(descricoes =>{
+    
     descPoke = descricoes
 })
 
@@ -233,6 +234,7 @@ function rodaJogo(){
 
 const loop = setInterval(()=>{
     if(gameover || final){
+        clearInterval(loop)
         return
     }
 const pokePosition = window.getComputedStyle(pokemon).left.replace('px','')
@@ -331,52 +333,52 @@ if ( pokePosition < 0){
 
 
 function finalJogo() {
-music.src='assets/mp3/musicaFinal.mp3'
-document.getElementById('ending').style.display='flex'
+    music.src='assets/mp3/musicaFinal.mp3'
+    document.getElementById('ending').style.display='flex'
+    textoCentral.innerText ='PARABÉNS! VOCÊ COMPLETOU A POKEDEX'
+    textoCentral.style.display='flex'
+    textoCentral.classList.remove('textoCentral')
+    textoCentral.classList.add('crescetexto')
+    setTimeout(()=>{
+        textoCentral.style.display='none'
+        pokedexBtn.style="display:flex;width:57px;position:absolute;top: 59px;right: 63px;border: none;z-index: 4;cursor: pointer;"
+        document.getElementById('contPokemonFinal').style.display='flex'
+        if (x <600){
+            pokedexBtn.style="display:flex;width:57px;position:absolute;top: 211px;right: 16px;border: none;z-index: 4;cursor: pointer;"
+        }
+    },7000)
 
-textoCentral.innerText ='PARABÉNS! VOCÊ COMPLETOU A POKEDEX'
-textoCentral.style.display='flex'
-textoCentral.classList.remove('textoCentral')
-textoCentral.classList.add('crescetexto')
-setTimeout(()=>{
-    textoCentral.style.display='none'
-    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 59px;right: 63px;border: none;z-index: 4;cursor: pointer;"
-    document.getElementById('contPokemonFinal').style.display='flex'
-if (x <600){
-    pokedexBtn.style="display:flex;width:57px;position:absolute;top: 211px;right: 16px;border: none;z-index: 4;cursor: pointer;"
-    
-}
-},7000)
+    setTimeout(()=>{
+        document.getElementById('contPokemonFinal').innerHTML='<img src="assets/img/charizard.gif" id="correndoEsq"class="correndoEsq">'
+        document.getElementById('contPokemonFinal').style.bottom='200px'
+        document.getElementById('contPokemonFinal').classList.remove('pokemonFinal')
+        document.getElementById('correndoEsq').style.width='400px'
+        document.getElementById('contPokemonFinal').classList.add('pokemonFinal2')
+    },16000)
 
-setTimeout(()=>{
-    document.getElementById('contPokemonFinal').innerHTML='<img src="assets/img/charizard.gif" id="correndoEsq"class="correndoEsq">'
-    document.getElementById('contPokemonFinal').style.bottom='200px'
-    document.getElementById('contPokemonFinal').classList.remove('pokemonFinal')
-    document.getElementById('correndoEsq').style.width='400px'
-    document.getElementById('contPokemonFinal').classList.add('pokemonFinal2')
-},16000)
-setTimeout(()=>{
-    document.getElementById('contPokemonFinal').innerHTML='<img src="assets/img/red.gif" id="correndoEsq"class="correndoEsq">'
-    document.getElementById('contPokemonFinal').style.bottom='30px'
-    document.getElementById('correndoEsq').style.width='200px'
-    document.getElementById('contPokemonFinal').classList.remove('pokemonFinal2')
-    document.getElementById('contPokemonFinal').classList.add('pokemonFinal')
-},36200)
-setTimeout(()=>{
-    document.getElementById('contPokemonFinal').innerHTML='<img src="assets/img/mew.gif" id="correndoEsq"class="correndoEsq">'
-    document.getElementById('contPokemonFinal').style.bottom='400px'
-    document.getElementById('correndoEsq').style.width='100px'
-},56000)
-setTimeout(()=>{
-    document.getElementById('contPokemonFinal').innerHTML='<img src="assets/img/hooh.gif" id="correndoEsq"class="correndoEsq">'
-    document.getElementById('contPokemonFinal').style.bottom='200px'
-    document.getElementById('correndoEsq').style.width='200px'
-    document.getElementById('correndoEsq').style.animationDuration='35s'
-},76000)
+    setTimeout(()=>{
+        document.getElementById('contPokemonFinal').innerHTML='<img src="assets/img/red.gif" id="correndoEsq"class="correndoEsq">'
+        document.getElementById('contPokemonFinal').style.bottom='30px'
+        document.getElementById('correndoEsq').style.width='200px'
+        document.getElementById('contPokemonFinal').classList.remove('pokemonFinal2')
+        document.getElementById('contPokemonFinal').classList.add('pokemonFinal')
+    },36200)
 
-setTimeout(()=>{document.getElementById('escureceTela').style.display='flex'},75000)
-setTimeout(()=>{document.getElementById('creditos').style.display='flex'},78000)
-    
+    setTimeout(()=>{
+        document.getElementById('contPokemonFinal').innerHTML='<img src="assets/img/mew.gif" id="correndoEsq"class="correndoEsq">'
+        document.getElementById('contPokemonFinal').style.bottom='400px'
+        document.getElementById('correndoEsq').style.width='100px'
+    },56000)
+
+    setTimeout(()=>{
+        document.getElementById('contPokemonFinal').innerHTML='<img src="assets/img/hooh.gif" id="correndoEsq"class="correndoEsq">'
+        document.getElementById('contPokemonFinal').style.bottom='200px'
+        document.getElementById('correndoEsq').style.width='200px'
+        document.getElementById('correndoEsq').style.animationDuration='35s'
+    },76000)
+
+    setTimeout(()=>{document.getElementById('escureceTela').style.display='flex'},75000)
+    setTimeout(()=>{document.getElementById('creditos').style.display='flex'},78000) 
 }
 document.addEventListener('keydown', jump)
 document.addEventListener('click', jump)
