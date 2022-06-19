@@ -14,6 +14,11 @@ p{
     margin-top: 20px;
 }
 
+p, h1{
+    text-align: center;
+
+}
+
 .info{
     margin: 0 auto;
     background-color: black;
@@ -56,8 +61,6 @@ main{
     animation: piscando 2s infinite ease-in;
 }
 
-
-
 .espaco{
     height: 30px;
     background-color: #333;
@@ -66,8 +69,8 @@ main{
     align-items: center;
     font-size: 10px;
     text-align: center;
-    
 }
+
 .carregando{
     display: none;
     flex-direction: column;
@@ -82,7 +85,6 @@ main{
 }
 
 .pikaCarregando{
-
     width: 100px;
 }
 
@@ -90,7 +92,6 @@ main{
     font-size: 25px;
     animation: piscando 2s infinite ease-in;
 }
-
 
 .textoCentral{
     display: none;
@@ -114,7 +115,6 @@ main{
     text-shadow: 3px 2px 7px #000000;
     font-size: 30px;
     animation: crescetexto 2s ease-in-out;
-    
 }
 
 .imgCentral{
@@ -124,7 +124,6 @@ main{
     justify-content: center;
     align-items: center;
     z-index: 3;
-    
 }
 .imgCentral img{
     opacity: 0;
@@ -154,7 +153,6 @@ main{
 }
 
 .musica{
-    
     width: 100px;
     position: absolute;
     top: 4px;
@@ -178,7 +176,6 @@ main{
     animation: pokebola 1.2s linear ;
     display: none;
     transform: rotateY(180deg);
-    
 }
 
 .bg-inicial{
@@ -189,7 +186,6 @@ main{
     top: -5px;
 }
 
-
 .pikainicio{
     width: 300px;
     position: absolute;
@@ -197,6 +193,7 @@ main{
     left: 0px;
     z-index: 2;
 }
+
 .pikachu{
     width: 150px;
     position: absolute;
@@ -272,7 +269,9 @@ main{
 }
 
 .escureceTela{
+    
     display: none;
+    position: relative;
     width: 100%;
     height: 100%;
     background-color: #000000;
@@ -299,24 +298,24 @@ main{
     animation: correndo 20s infinite;
 }
 
-
 .correndoEsq{
     width: 150px;
 }
 
 .creditos{
-display: none;
-position: absolute;
-flex-direction: column;
-width: 100vw;
-height: 100vh;
-z-index: 6;
-justify-content: center;
-align-items: center;
-text-align: center;
-bottom: 600px;
-left: -230px;
-animation: creditos 60s;
+    display: none;
+    position: absolute;
+    margin: auto;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 600px;
+    /*left: -230px;*/
+    animation: creditos 60s;
 }
 
 .tecnologias{
@@ -326,10 +325,10 @@ animation: creditos 60s;
     align-items: center;
     
 }
+
 .tecnologias img{
     width: 100px;
 }
-
 
 #iniciar{
     position: absolute;
@@ -343,7 +342,6 @@ animation: creditos 60s;
     padding: 15px;
     font-weight: bold;
 }
-
 
 #reiniciar{
     width: 84px;
@@ -399,7 +397,6 @@ animation: creditos 60s;
         bottom: 600px;
     }
 }
-
 
 @keyframes fadein{
     0%{
@@ -495,12 +492,12 @@ animation: creditos 60s;
 
     
     40%{
-        bottom: 150px
+        bottom: 150px;
         transform: rotate(-90deg);
     }
     
     75%{
-        bottom: 100px
+        bottom: 100px;
         transform: rotate(0deg);
     }
     80%{
@@ -513,8 +510,6 @@ animation: creditos 60s;
 
 }
 
-
-
 @keyframes crescetexto{
     from{
     font-size: 10px;
@@ -524,10 +519,7 @@ animation: creditos 60s;
     }
 }
 
-
-
-@media (max-width: 600px)
-{
+@media (max-width: 600px){
     .info{
         margin: 0 auto;
         background-color: black;
@@ -538,6 +530,7 @@ animation: creditos 60s;
         justify-content: center;
         align-items: center;
     }
+
     .carregando{
         display: none;
         flex-direction: column;
@@ -551,19 +544,17 @@ animation: creditos 60s;
         padding: 50px;
     }
 
-  main{
-    top:-25px;
-    width: 100vw;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    display: none;
-    margin-top: 10px;
-  }
+    main{
+        top:-25px;
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        display: none;
+        margin-top: 10px;
+    }
 
-  
-
-.instrucoesMobile{
+    .instrucoesMobile{
         position: absolute;
         width: 100vw;
         height: -4vh;
@@ -575,132 +566,127 @@ animation: creditos 60s;
         display: flex;
         text-shadow: 3px 2px 7px #000000;
         animation: piscando 2s infinite ease-in;
-}
+    }
 
-.toque{
-    width: 100px;
-}
+    .toque{
+        width: 100px;
+    }
+
     .bg-inicial{
         position: absolute;
         height: 110%;
         animation: rolafundo 6s infinite linear;
         z-index: 1;
         top: -5px;
-  }
-
-  
-.mostraPlacar{
-    display: none;
-}
-
-.placar{
-    position: absolute;
-    top: 129px;
-    right: 8px;
-    z-index: 2;
-    color: aliceblue;
-    font-size: 45px;
-    font-weight: bold;
-}
-
-.pokeballMenu{
-    position: absolute;
-    top: 151px;
-    right: 95px;
-    z-index: 2;
-    width: 50px;
-}
-
-
-.logo{
-    position: relative;
-    width: 450px;
-    z-index: 2;
-    margin: 0 auto;
-    margin-left: 70px;
-}
-
-#iniciar{
-    position: relative;
-    width: 200px;
-    height: 60px;
-    top: 278px;
-    left: -4px;
-    border: none;
-    z-index: 2;
-    border-radius: 15px;
-    color: black;
-    background-color:yellow;
-    padding: 15px;
-    font-weight: bold;
-    margin: 0 auto;
-}
-
-#reiniciar{
-    width: 84px;
-    position: absolute;
-    top: 433px;
-    right: 252px;
-    border: none;
-    z-index: 3;
-    display: none;
-}
-
-
-
-.musica{
-    width: 100px;
-    position: absolute;
-    top: 60px;
-    right: -54px;
-    z-index: 3;
-}
-
-.gameover{
-    position: absolute;
-    top: 237px;
-    left: 73px;
-    z-index: 2;
-    width: 250px;
-    opacity: 0;
-}
-
-
-
-.pokemon{
-    height: 120px;
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-    //left:1200px;
-    animation: pokemon 4s infinite linear;
-    display:none;
-}
-
-#pokedexBtn{
-    width: 72px;
-    position: absolute;
-    top: 441px;
-    right: 46px;
-    border: none;
-    z-index: 4;
-    display: none;
-    cursor: pointer;
-}
-
-.creditos{
-    display: none;
-    position: absolute;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    z-index: 6;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    bottom: 600px;
-    left: 0;
-    animation: creditos 60s;
+    }
+    
+    .mostraPlacar{
+        display: none;
     }
 
+    .placar{
+        position: absolute;
+        top: 129px;
+        right: 8px;
+        z-index: 2;
+        color: aliceblue;
+        font-size: 45px;
+        font-weight: bold;
+    }
+
+    .pokeballMenu{
+        position: absolute;
+        top: 151px;
+        right: 95px;
+        z-index: 2;
+        width: 50px;
+    }
+
+    .logo{
+        position: relative;
+        width: 450px;
+        z-index: 2;
+        margin: 0 auto;
+        margin-left: 70px;
+    }
+
+    #iniciar{
+        position: relative;
+        width: 200px;
+        height: 60px;
+        top: 278px;
+        left: -4px;
+        border: none;
+        z-index: 2;
+        border-radius: 15px;
+        color: black;
+        background-color:yellow;
+        padding: 15px;
+        font-weight: bold;
+        margin: 0 auto;
+    }
+
+    #reiniciar{
+        width: 84px;
+        position: absolute;
+        top: 433px;
+        right: 252px;
+        border: none;
+        z-index: 3;
+        display: none;
+    }
+
+    .musica{
+        width: 100px;
+        position: absolute;
+        top: 60px;
+        right: -54px;
+        z-index: 3;
+    }
+
+    .gameover{
+        position: absolute;
+        top: 237px;
+        left: 73px;
+        z-index: 2;
+        width: 250px;
+        opacity: 0;
+    }
+
+    .pokemon{
+        height: 120px;
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        /*left:1200px;*/
+        animation: pokemon 4s infinite linear;
+        display:none;
+    }
+
+    #pokedexBtn{
+        width: 72px;
+        position: absolute;
+        top: 441px;
+        right: 46px;
+        border: none;
+        z-index: 4;
+        display: none;
+        cursor: pointer;
+    }
+
+    .creditos{
+        display: none;
+        position: absolute;
+        margin: auto;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        z-index: 6;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        bottom: 600px;
+        left: 0;
+        animation: creditos 60s;
+    }
 }
