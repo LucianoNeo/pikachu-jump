@@ -19,7 +19,7 @@ const pokedexLista = document.getElementById('pokedexLista')
 let numeroPokemon = 1
 let carregado = false
 let loading = true
-let capturados = 1
+let capturados = 95
 let placar = document.getElementById('placar')
 let iniciar = false
 let gameover = false
@@ -259,6 +259,8 @@ if ( pokePosition < 600 ){
  }
 
  if (capturados > 100){
+    const pordosol = document.getElementById('porDoSol')
+    pordosol.style.display ='flex'
     pokemon.style.animationDuration='1.5s'
     if(x < 600){
         pokemon.style.animationDuration='2.5s'
