@@ -218,11 +218,14 @@ main{
 }
 
 .logo{
-    width: 600px;
-    position: absolute;
+    width: 60vw;
+    /* position: absolute; */
     top: 10;
-    right: 60px;
+    /* right: 60px; */
     z-index: 2;
+    align-self: center;
+    margin: 0 auto;
+    transform: translateY(-80px);
 }
 
 .pokemon{
