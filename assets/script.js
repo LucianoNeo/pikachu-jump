@@ -94,7 +94,14 @@ function carregar() {
             img.src = `assets/img/pokemon/pokemon (${index}).gif`
             img.style = "position:absolute";
             cache.appendChild(img);   
+        
         }
+        cache.src = 'assets/img/pikaend.png'
+        cache.src = 'assets/img/charizard.gif'
+        cache.src = 'assets/img/eevee.gif'
+        cache.src = 'assets/img/mew.gif'
+        cache.src = 'assets/img/red.gif'
+        cache.src = 'assets/img/hooh.gif'
         cache.style.display='none'
         loading= false
         if(!loading){
@@ -216,7 +223,7 @@ const jump =()=>{
     jumpSound.play()
     setTimeout(()=>{
         pikachu.classList.remove('jump')
-    },1000)
+    },900)
 }
 }
 

@@ -26,6 +26,7 @@ p, h1{
     z-index: 2;
     background-color: rgb(245 16 7 / 55%);
     display:none;
+    animation: pordosol 1s linear;
 }
 
 .info{
@@ -213,7 +214,7 @@ main{
 }
 
 .jump{
-    animation: jump 1s ease-in;
+    animation: jump .9s ease-in;
 }
 
 .logo{
@@ -398,6 +399,17 @@ main{
     }
 }
 
+@keyframes pordosol{
+    0%{
+    opacity: 0;
+    }
+    100%{
+        
+    opacity: 0.55;
+    }
+}
+
+
 @keyframes creditos{
     0%{
     bottom: -900px;
@@ -496,18 +508,20 @@ main{
        transform: rotate(-60deg);
     }
     30%{
+        transform: rotate(-90deg);
         bottom: 200px;
     }
 
     
-    40%{
+    35%{
+        transform: rotate(-30deg);
         bottom: 150px;
-        transform: rotate(-90deg);
+        
     }
     
     75%{
         bottom: 100px;
-        transform: rotate(0deg);
+        transform: rotate(30deg);
     }
     80%{
         transform: rotate(90deg);
