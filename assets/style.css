@@ -32,8 +32,8 @@ p, h1{
 .info{
     margin: 0 auto;
     background-color: black;
-    width: 800px;
-    height: 500px;
+    width: 100vw;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,15 +61,16 @@ main{
 .instrucoesPC{
     position: absolute;
     display: flex;
-    top: 449px;
-    z-index: 3;
-    width: 792px;
+    bottom: 50px;
+    z-index: 5;
+    width: 100vw;
     justify-content: flex-end;
-    text-align: center;
+    /* text-align: center; */
     text-shadow: 3px 2px 7px #000000;
     align-items: center;
     animation: piscando 2s infinite ease-in;
 }
+
 
 .espaco{
     height: 30px;
@@ -86,8 +87,8 @@ main{
     flex-direction: column;
     margin: 0 auto;
     background-color: black;
-    width: 800px;
-    height: 500px;
+    width: 100vw;
+    height: 100vh;
     z-index: 3;
     align-items: flex-end;
     justify-content: flex-end;
@@ -141,6 +142,17 @@ main{
     animation: fadeout 1s ease-in;
 }
 
+.instrucoesMobile{
+    width: 100vw;
+    z-index: 2;
+    font-size: 25px;
+    align-items: flex-end;
+    display: flex;
+    text-shadow: 3px 2px 7px #000000;
+    animation: piscando 2s infinite ease-in;
+    justify-content: end;
+    margin-bottom: 20px;
+}
 
 .versao{
     position: absolute;
@@ -219,9 +231,14 @@ main{
 
 .logo{
     width: 60vw;
-    /* position: absolute; */
+}
+
+.wrapLogo{
+    position: absolute;
+    display: flex;
+    width: 100vw;
     top: 10;
-    /* right: 60px; */
+    justify-content: center;
     z-index: 2;
     align-self: center;
     margin: 0 auto;
@@ -345,10 +362,10 @@ main{
 
 #iniciar{
     position: absolute;
-    top: 300px;
-    right: 350px;
+    top: 70vh;
+    right: 45vw;
     border: none;
-    z-index: 2;
+    z-index: 5;
     border-radius: 15px;
     color: black;
     background-color:yellow;
@@ -362,7 +379,7 @@ main{
     top: 285px;
     right: 467px;
     border: none;
-    z-index: 2;
+    z-index: 3;
     display: none;
 }
 
@@ -580,19 +597,6 @@ main{
         margin-top: 10px;
     }
 
-    .instrucoesMobile{
-        position: absolute;
-        width: 100vw;
-        height: -4vh;
-        z-index: 3;
-        top: 383px;
-        right: -20px;
-        font-size: 25px;
-        align-items: center;
-        display: flex;
-        text-shadow: 3px 2px 7px #000000;
-        animation: piscando 2s infinite ease-in;
-    }
 
     .toque{
         width: 100px;
@@ -643,7 +647,7 @@ main{
         top: 278px;
         left: -4px;
         border: none;
-        z-index: 2;
+        z-index: 5;
         border-radius: 15px;
         color: black;
         background-color:yellow;

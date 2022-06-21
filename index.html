@@ -95,12 +95,20 @@
     <button id="iniciar" onclick="iniciaJogo()">INICIAR</button>
     <img src="assets/img/restart.png" id="reiniciar" onclick="(document.location.reload(true))">
     <img src="assets/img/pokedex.png" id="pokedexBtn" onclick="mostrarPokedex()">
-    <img src="assets/img/logo.png" alt="" srcset="" class="logo" id="logo">
+    <div class="wrapLogo" id="wrapLogo">
+        <img src="assets/img/logo.png" alt="" srcset="" class="logo" id="logo">
+    </div>
     <img src="assets/img/pikachu.gif" alt="" srcset="" class="pikachu" id="pikachu">
     <img src="assets/img/pokemon/pokemon (1).gif" alt="" srcset="" class="pokemon" id="pokemon">
     <img src="assets/img/bg-inicial-low.png" alt="" srcset="" class="bg-inicial" id="bg">
     <img src="assets/img/bolaCaptura.gif" alt="" srcset="" class="pokeballCaptura" id="pokeballCaptura">
-
+    <div class="instrucoesPC" id="instrucoesPC">
+        <span>Aperta a tecla</span><span class="espaco">ESPAÇO</span> <span>para pular!</span>
+    </div>
+    <div class="instrucoesMobile" id="instrucoesMobile">
+        <span>Toque na tela para pular</span>
+        <img src="assets/img/toque.png" class="toque" width="80px">
+    </div>
 
 <section class="ending" id="ending">
     <img src="assets/img/confetti.gif" alt="" srcset="">
@@ -110,13 +118,7 @@
 <div id="contPokemonFinal" class='pokemonFinal'> <img src="assets/img/eevee.gif" id='correndoEsq'class="correndoEsq"></div>
 <section class="escureceTela" id="escureceTela">
 
-    <div class="instrucoesPC" id="instrucoesPC">
-        <span>Aperta a tecla</span><span class="espaco">ESPAÇO</span> <span>para pular!</span>
-    </div>
-    <div class="instrucoesMobile" id="instrucoesMobile">
-        <span>Toque na tela para pular</span>
-        <img src="assets/img/toque.png" class="toque">
-    </div>
+    
     <section id='creditos' class="creditos">
         <h1>DESENVOLVIDO POR LUCIANO NEO</h1>
         <br><br>

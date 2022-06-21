@@ -6,6 +6,7 @@ const gameoverTela = document.getElementById('gameover')
 const iniciarbtn = document.getElementById('iniciar')
 const reiniciar = document.getElementById('reiniciar')
 const pokedexBtn = document.getElementById('pokedexBtn')
+const wrapLogo = document.getElementById('wrapLogo')
 const logo = document.getElementById('logo')
 const mostraPlacar = document.getElementById('mostraPlacar')
 const jumpBtn = document.getElementById('jumpbtn')
@@ -122,8 +123,9 @@ function carregar() {
             telaInicial.style.display ='flex'
             music.play()
             pikaInicio.play()
-            if(x < 480){
-            document.getElementById('instrucoesPC').style.display='none'    
+            if(y > 300){
+            document.getElementById('instrucoesPC').style.display='none'  
+            document.getElementById('instrucoesMobile').style.display='flex'     
             }
             },1000)
         }
@@ -145,7 +147,8 @@ function iniciaJogo(){
     pikainicio.style.display = 'none'
     mostraPlacar.style.display = 'block'
     pikachu.style.display = 'block'
-    logo.style = 'position:absolute; width:300px;top: 100px;left: 10px;'
+    wrapLogo.style='position: absolute;top: 10;align-self: flex-start;transform: translateY(25px);justify-content: start; margin-left: 10px'
+    logo.style = 'width:35vw;'
     music.src='assets/mp3/musica.mp3'
     textoCentral.style.display='flex'
     
