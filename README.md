@@ -2,7 +2,16 @@
 Pikachu Jump é o primeiro jogo que desenvolvo utilizando os conhecimentos que venho estudando na área de Front-End. 
 - O jogo está sendo desenvolvido com HTML5, CSS3 e JavaScript.
 - O jogo tem como objetivo saltar sobre os pokémon para assim capturá-los e adicioná-los à Pokedex.
-
+DESKTOP:
+<img src='screen1.jpg'>
+<img src='screen2.jpg'>
+<img src='screen3.jpg'>
+MOBILE:
+<p align:center>
+<img src='screenmobile1.jpg'>
+<img src='screenmobile2.jpg'>
+<img src='screenmobile3.jpg'>
+</p>
 ## Objetivos concluídos na VERSÃO 1.0 ✅
 - Adição da primeira geração de pokémon (1 ao 151)
 - Mecânica de pulo utilizando animações em CSS e evento escutador em Javascript
