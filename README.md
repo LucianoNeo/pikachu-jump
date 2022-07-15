@@ -13,6 +13,7 @@ MOBILE:
 <img src='screenmobile3.jpg'>
 </p>
 <br>
+
 ## Objetivos concluídos na VERSÃO 1.0 ✅
 - Adição da primeira geração de pokémon (1 ao 151)
 - Mecânica de pulo utilizando animações em CSS e evento escutador em Javascript
